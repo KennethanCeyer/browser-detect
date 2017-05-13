@@ -31,6 +31,10 @@ $ bower install browser-detect --save
 $ yarn install browser-detect --save
 ```
 
+**\* Download zip**
+
+[Download zip file from this link](https://github.com/KennethanCeyer/browser-detect/archive/master.zip)
+
 ----
 
 ### How to use
