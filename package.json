@@ -1,6 +1,6 @@
 {
   "name": "browser-detect",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Simplify detecting your browser.",
   "main": "src/detect-browser.js",
   "scripts": {

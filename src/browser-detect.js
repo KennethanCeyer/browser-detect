@@ -33,7 +33,7 @@ function browser(agent) {
             var version = match && match[1].split(/[._]/).slice(0, 3);
 
             if (version && version.length < 3) {
-                Array.prototype.push.apply(version, (version.length == 1) ? [0, 0] : [0]);
+                Array.prototype.push.apply(version, (version.length === 1) ? [0, 0] : [0]);
             }
 
             return {
