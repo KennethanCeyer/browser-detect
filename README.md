@@ -171,6 +171,7 @@ $ node ./examples/server.js
 - Support TDD.
 - Support CI.
 - Suport CDN.
+- Support to detect mobile and OS.
 
 ----
 
