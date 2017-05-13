@@ -22,7 +22,7 @@ $ npm install browser-detect --save
 **\* Bower**
 
 ```bash
-$ bower install browser-detect --save
+$ bower install browser-catch --save
 ```
 
 **\* Yarn**
@@ -54,7 +54,7 @@ console.log(browser());
 ```
 
 ```bash
-> { name: 'MSIE', version: 9 } # IE 9
+> { name: 'chrome', version: '58.0.3029' } # CHROME 58.0.3029
 ```
 
 **Server (node)**
@@ -68,14 +68,20 @@ console.log(result);
 ```
 
 ```bash
-> { name: 'MSIE', version: 9 } # IE 9
+> { name: 'ie', version: '9.0' } # IE 9
 ```
+
+----
+
+### Features
+
+- Detect browser both compatible client and server.
+- Support AMD and CommonJS module feature.
 
 ----
 
 ### Plan for near *near*, **very near** future.
 
-- Support AMD and CommonJS module feature.
 - Support Webpack2.x.
 - Support typings.
 - Support TDD.
