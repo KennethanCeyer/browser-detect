@@ -527,6 +527,5 @@ define('main', ['browser-detect'], function (browserDetect) {
         return browserDetect(navigator);
     };
 });
-    var browser = window.browser = _require('main');
-    return browser;
+    return _require('main');
 }));

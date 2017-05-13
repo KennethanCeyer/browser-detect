@@ -8,6 +8,5 @@
     }
 }(this, function (<%= param %>) {
     <%= contents %>
-    var browser = window.browser = _require('main');
-    return browser;
+    return _require('main');
 }));
