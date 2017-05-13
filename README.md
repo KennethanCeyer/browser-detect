@@ -93,12 +93,10 @@ $ node ./examples/server.js
 
 ----
 
-### Features
+## Features
 
 - Detect browser both compatible client and server.
 - Support AMD and CommonJS module feature.
-
-----
 
 ### Completed
 
@@ -117,7 +115,27 @@ $ node ./examples/server.js
 
 ----
 
-### Contribution
+## Compatibility
+
+### Test completed
+
+- IE 7+
+- Chrome (Windows, MAC)
+- Edge
+- Firefox
+- Safari (Windows, MAC)
+- Opera
+
+### Expected
+
+- Android
+- IOS
+- Window phone (Edge)
+- Chromium Browsers (Will be named chrome)
+
+----
+
+## Contribution
 
 **Setting environment for contribute**
 
