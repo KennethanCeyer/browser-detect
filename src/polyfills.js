@@ -98,7 +98,7 @@ define(() => {
                 }
             });
         }
-    })(Object.prototype.assign);
+    })(Object.assign);
 
     (method => {
         if (typeof method === 'undefined') {

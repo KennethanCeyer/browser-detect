@@ -563,7 +563,7 @@ define('polyfills', [], function () {
                 }
             });
         }
-    })(Object.prototype.assign);
+    })(Object.assign);
 
     (function (method) {
         if (typeof method === 'undefined') {
