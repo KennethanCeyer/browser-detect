@@ -161,6 +161,7 @@ $ node ./examples/server.js
 
 - Support typings.
 - Support guideline and documentations for contributors.
+- Support browser compatity to IE7.
 
 ----
 
@@ -169,7 +170,6 @@ $ node ./examples/server.js
 - Support Webpack2.x.
 - Support TDD.
 - Support CI.
-- Support browser compatity to IE7.
 - Suport CDN.
 
 ----
@@ -191,6 +191,7 @@ $ node ./examples/server.js
 - IOS
 - Window phone (Edge)
 - Chromium Browsers (Will be named chrome)
+- IE 6
 
 ----
 
