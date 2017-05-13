@@ -89,3 +89,33 @@ console.log(result);
 - Support browser compatity.
 - Suport CDN.
 - Support guideline and documentations for contributors.
+
+----
+
+### Contribution
+
+**Setting environment for contribute**
+
+1. Install project from GitHub.
+
+```bash
+$ git clone https://github.com/KennethanCeyer/browser-detect.git
+```
+
+2. Install all modules from NPM.
+
+```bash
+$ npm install
+```
+
+3. Install gulp.
+
+```bash
+$ npm install gulp -g
+```
+
+4. Build sources
+
+```bash
+$ gulp
+```
