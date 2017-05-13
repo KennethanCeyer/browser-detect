@@ -1,6 +1,6 @@
 {
   "name": "browser-detect",
-  "version": "0.2.10",
+  "version": "0.2.12",
   "description": "Simplify detecting your browser.",
   "main": "dist/browser-detect.js",
   "typings": "typings/browser-detect.d.ts",

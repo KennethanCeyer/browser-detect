@@ -4,9 +4,13 @@ define(() => {
         var ERR_ACCESSORS_NOT_SUPPORTED = 'Getters & setters cannot be defined on this javascript engine';
         var ERR_VALUE_ACCESSORS = 'A property cannot both have accessors and be writable or have a value';
 
+        const TypeError = TypeError || ((message) => {
+            return message
+        });
+
         Object.defineProperty = function defineProperty(object, property, descriptor) {
             // Where native support exists, assume it
-            if (method && (object === window || object === document || object === Element.prototype || object instanceof Element)) {
+            if (method && ((typeof window !== 'undefined' && object === window) || (typeof document !== 'undefined' && object === document) || (typeof Element !== 'undefined' && (object === Element.prototype || object instanceof Element)))) {
                 return method(object, property, descriptor);
             }
 
