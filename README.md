@@ -50,7 +50,19 @@ console.log(browser());
 ```
 
 ```bash
-> { name: 'msie', version: 9 } # IE 9
+> { name: 'MSIE', version: 9 } # IE 9
 ```
 
 **Server (node)**
+
+1. Just simple :trollface:
+
+```javascript
+var browser = require('browser-detect');
+var result = browser();
+console.log(result);
+```
+
+```bash
+> { name: 'MSIE', version: 9 } # IE 9
+```
