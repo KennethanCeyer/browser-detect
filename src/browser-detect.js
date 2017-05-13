@@ -1,9 +1,15 @@
-function browser(agent) {
-    if (typeof agent === 'undefined') {
+function browser(navigator) {
+    if (typeof navigator === 'undefined' && typeof process === 'undefined') {
         throw new Exception(
-            'Please give user-agent argument.\n' +
-            '> browser(navigator.userAgent)'
+            'Please give navigator.\n' +
+            '> browser(navigator or window.navigator)'
         );
+    }
+    else if (typeof process !== 'undefined') {
+        return {
+            name: 'node',
+            version: process.version.slice(1)
+        };
     }
 
     // * Referenced DamonOehlman/detect-browser
@@ -26,10 +32,10 @@ function browser(agent) {
 
     return browsers
         .filter(element => {
-            return element[1].test(agent);
+            return element[1].test(navigator.userAgent);
         })
         .map(element => {
-            var match = element[1].exec(userAgentString);
+            var match = element[1].exec(navigator.userAgent);
             var version = match && match[1].split(/[._]/).slice(0, 3);
 
             if (version && version.length < 3) {
@@ -37,8 +43,12 @@ function browser(agent) {
             }
 
             return {
-                name: rule[0],
+                name: element[0],
                 version: version.join('.')
             };
-        });
+        }).shift();
 };
+
+define(() => {
+    return browser;
+});
