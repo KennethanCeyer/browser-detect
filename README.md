@@ -131,7 +131,7 @@ $ node ./examples/server.js
 - Android
 - IOS
 - Window phone (Edge)
-- Chromium Browsers (Will named chrome)
+- Chromium Browsers (Will be named chrome)
 
 ----
 
