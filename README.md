@@ -56,7 +56,7 @@ console.log(browser());
 ```
 
 ```bash
-> { name: 'chrome', version: '58.0.3029' } # CHROME 58.0.3029
+> { name: 'chrome', version: '58.0.3029', versionNumber: 58.03029 } # CHROME 58.0.3029
 ```
 
 **Server (node)**
@@ -70,7 +70,7 @@ console.log(result);
 ```
 
 ```bash
-> { name: 'ie', version: '9.0.0' } # IE 9
+> { name: 'ie', version: '9.0.0', versionNumber: 9 } # IE 9
 ```
 
 ----
