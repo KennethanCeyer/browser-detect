@@ -2,6 +2,8 @@
 
 > Simplify detecting your browser.
 
+[![npm version](https://badge.fury.io/js/browser-detect.svg)](https://badge.fury.io/js/browser-detect) [![Bower version](https://badge.fury.io/bo/browser-catch.svg)](https://badge.fury.io/bo/browser-catch) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![ghit.me](https://ghit.me/badge.svg?repo=KennethanCeyer/browser-detect)](https://ghit.me/repo/KennethanCeyer/browser-detect) [![Join the chat at https://gitter.im/KennethanCeyer/PIGNOSE](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/KennethanCeyer/PIGNOSE?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![GitHub stars](https://githubbadges.com/star.svg?user=KennethanCeyer&repo=browser-detect&background=007ecg&color=ffffff&style=flat)](https://github.com/KennethanCeyer/browser-detect)
+
 ----
 
 ```plaintext
@@ -68,7 +70,25 @@ console.log(result);
 ```
 
 ```bash
-> { name: 'ie', version: '9.0' } # IE 9
+> { name: 'ie', version: '9.0.0' } # IE 9
+```
+
+----
+
+### Try with an example
+
+**Client**
+
+- Open `examples/client.html` by your browser.
+
+**Server**
+
+- Open command or terminal.
+- Move directory to `browser-detect` path that you download.
+- Type following code.
+
+```bash
+$ node ./examples/server.js
 ```
 
 ----
@@ -80,12 +100,47 @@ console.log(result);
 
 ----
 
+### Completed
+
+- Support typings.
+- Support guideline and documentations for contributors.
+
+----
+
 ### Plan for near *near*, **very near** future.
 
 - Support Webpack2.x.
-- Support typings.
 - Support TDD.
 - Support CI.
-- Support browser compatity.
+- Support browser compatity to IE7.
 - Suport CDN.
-- Support guideline and documentations for contributors.
+
+----
+
+### Contribution
+
+**Setting environment for contribute**
+
+1. Install project from GitHub.
+
+```bash
+$ git clone https://github.com/KennethanCeyer/browser-detect.git
+```
+
+2. Install all modules from NPM.
+
+```bash
+$ npm install
+```
+
+3. Install gulp.
+
+```bash
+$ npm install gulp -g
+```
+
+4. Build sources
+
+```bash
+$ gulp
+```
