@@ -22,7 +22,7 @@ $ npm install browser-detect --save
 **\* Bower**
 
 ```bash
-$ bower install browser-detect --save
+$ bower install browser-catch --save
 ```
 
 **\* Yarn**
@@ -73,9 +73,15 @@ console.log(result);
 
 ----
 
+### Features
+
+- Detect browser both compatible client and server.
+- Support AMD and CommonJS module feature.
+
+----
+
 ### Plan for near *near*, **very near** future.
 
-- Support AMD and CommonJS module feature.
 - Support Webpack2.x.
 - Support typings.
 - Support TDD.
