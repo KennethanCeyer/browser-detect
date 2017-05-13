@@ -70,3 +70,16 @@ console.log(result);
 ```bash
 > { name: 'MSIE', version: 9 } # IE 9
 ```
+
+----
+
+### Plan for near *near*, **very near** future.
+
+- Support AMD and CommonJS module feature.
+- Support Webpack2.x.
+- Support typings.
+- Support TDD.
+- Support CI.
+- Support browser compatity.
+- Suport CDN.
+- Support guideline and documentations for contributors.
