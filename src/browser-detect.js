@@ -1,9 +1,7 @@
-function browser(navigator) {
+function browserDetector(navigator) {
     if (typeof navigator === 'undefined' && typeof process === 'undefined') {
-        throw new Exception(
-            'Please give navigator.\n' +
-            '> browser(navigator or window.navigator)'
-        );
+        throw 'Please give navigator.\n' +
+              '> browser(navigator or window.navigator)';
     }
     else if (typeof process !== 'undefined') {
         return {
@@ -49,6 +47,6 @@ function browser(navigator) {
         }).shift();
 };
 
-define(() => {
-    return browser;
+define(['polyfills'], () => {
+    return browserDetector;
 });

@@ -22,7 +22,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 var requirejs, _require, define;
 (function (undef) {
     var main,
-        _req,
+        req,
         makeMap,
         handlers,
         defined = {},
@@ -178,7 +178,7 @@ var requirejs, _require, define;
             if (typeof args[0] !== 'string' && args.length === 1) {
                 args.push(null);
             }
-            return _req.apply(undef, args.concat([relName, forceSync]));
+            return req.apply(undef, args.concat([relName, forceSync]));
         };
     }
 
@@ -232,7 +232,7 @@ var requirejs, _require, define;
      * for normalization if necessary. Grabs a ref to plugin
      * too, as an optimization.
      */
-    makeMap = function makeMap(name, relParts) {
+    makeMap = function (name, relParts) {
         var plugin,
             parts = splitPrefix(name),
             prefix = parts[0],
@@ -278,10 +278,10 @@ var requirejs, _require, define;
     }
 
     handlers = {
-        require: function require(name) {
+        require: function (name) {
             return makeRequire(name);
         },
-        exports: function exports(name) {
+        exports: function (name) {
             var e = defined[name];
             if (typeof e !== 'undefined') {
                 return e;
@@ -289,7 +289,7 @@ var requirejs, _require, define;
                 return defined[name] = {};
             }
         },
-        module: function module(name) {
+        module: function (name) {
             return {
                 id: name,
                 uri: '',
@@ -299,7 +299,7 @@ var requirejs, _require, define;
         }
     };
 
-    main = function main(name, deps, callback, relName) {
+    main = function (name, deps, callback, relName) {
         var cjsModule,
             depName,
             ret,
@@ -364,7 +364,7 @@ var requirejs, _require, define;
         }
     };
 
-    requirejs = _require = _req = function req(deps, callback, relName, forceSync, alt) {
+    requirejs = _require = req = function (deps, callback, relName, forceSync, alt) {
         if (typeof deps === "string") {
             if (handlers[deps]) {
                 //callback in this case is really relName
@@ -379,7 +379,7 @@ var requirejs, _require, define;
             //deps is a config object, not an array.
             config = deps;
             if (config.deps) {
-                _req(config.deps, config.callback);
+                req(config.deps, config.callback);
             }
             if (!callback) {
                 return;
@@ -421,15 +421,15 @@ var requirejs, _require, define;
             }, 4);
         }
 
-        return _req;
+        return req;
     };
 
     /**
      * Just drops the config on the floor, but returns req in case
      * the config return value is used.
      */
-    _req.config = function (cfg) {
-        return _req(cfg);
+    req.config = function (cfg) {
+        return req(cfg);
     };
 
     /**
@@ -437,7 +437,7 @@ var requirejs, _require, define;
      */
     requirejs._defined = defined;
 
-    define = function define(name, deps, callback) {
+    define = function (name, deps, callback) {
         if (typeof name !== 'string') {
             throw new Error('See almond README: incorrect module build, no module name');
         }
@@ -461,11 +461,33 @@ var requirejs, _require, define;
     };
 })();
 
-define("../node_modules/almond/almond.js", function () {});
+define("almond", function () {});
 
-function browser(navigator) {
+if (Array.prototype.map === undefined) {
+    Array.prototype.map = function (fn) {
+        var rv = [];
+
+        for (var i = 0, l = this.length; i < l; i++) {
+            rv.push(fn(this[i]));
+        }return rv;
+    };
+}
+
+if (Array.prototype.filter === undefined) {
+    Array.prototype.filter = function (fn) {
+        var rv = [];
+
+        for (var i = 0, l = this.length; i < l; i++) {
+            if (fn(this[i])) rv.push(this[i]);
+        }return rv;
+    };
+}
+;
+define("polyfills", function () {});
+
+function browserDetector(navigator) {
     if (typeof navigator === 'undefined' && typeof process === 'undefined') {
-        throw new Exception('Please give navigator.\n' + '> browser(navigator or window.navigator)');
+        throw 'Please give navigator.\n' + '> browser(navigator or window.navigator)';
     } else if (typeof process !== 'undefined') {
         return {
             name: 'node',
@@ -493,8 +515,8 @@ function browser(navigator) {
     }).shift();
 };
 
-define('browser-detect', [], function () {
-    return browser;
+define('browser-detect', ['polyfills'], function () {
+    return browserDetector;
 });
 
 define('main', ['browser-detect'], function (browserDetect) {
@@ -503,5 +525,6 @@ define('main', ['browser-detect'], function (browserDetect) {
         return browserDetect(navigator);
     };
 });
-    return _require('main');
+    var browser = window.browser = _require('main');
+    return browser;
 }));
