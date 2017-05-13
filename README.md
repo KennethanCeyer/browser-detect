@@ -37,13 +37,13 @@ $ yarn install browser-detect --save
 
 **Client (browser)**
 
-1. Add following code in your `head` tag.
+Add following code in your `head` tag.
 
 ```html
 <script src="node_modules/browser-detect/dist/browser-detect.min.js"></script>
 ```
 
-2. And follow this code to detect browser.
+And follow this code to detect browser.
 
 ```javascript
 console.log(browser());
@@ -55,7 +55,7 @@ console.log(browser());
 
 **Server (node)**
 
-1. Just simple :trollface:
+Just simple :trollface:
 
 ```javascript
 var browser = require('browser-detect');
