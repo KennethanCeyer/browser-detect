@@ -1,0 +1,36 @@
+{
+  "name": "browser-detect",
+  "version": "1.0.0",
+  "description": "Simplify detecting your browser.",
+  "main": "src/detect-browser.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DamonOehlman/detect-browser.git"
+  },
+  "keywords": [
+    "browser",
+    "agent",
+    "modernizr",
+    "detect",
+    "node",
+    "client"
+  ],
+  "author": "PIGNOSE <kennethan@nhpcw.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KennethanCeyer/browser-detect/issues"
+  },
+  "homepage": "https://github.com/KennethanCeyer/browser-detect",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^2.1.2"
+  }
+}
