@@ -488,9 +488,13 @@ define("polyfills", function () {});
 function browserDetector(userAgent) {
     if (typeof userAgent === 'undefined') {
         if (typeof process !== 'undefined') {
+            var version = process.version.slice(1).split('.').slice(0, 3);
+            var versionTails = Array.prototype.slice.call(version, 1).join('') || '0';
+
             return {
                 name: 'node',
-                version: process.version.slice(1)
+                version: version.join('.'),
+                versionNumber: parseFloat(version[0] + '.' + versionTails)
             };
         } else {
             throw 'Please give user-agent.\n' + '> browser(navigator.userAgent or res.headers[\'user-agent\']).';
