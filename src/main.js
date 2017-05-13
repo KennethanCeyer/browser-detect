@@ -7,7 +7,7 @@ define(['browser-detect'], (browserDetect) => {
                 userAgent = undefined;
             }
             else {
-                userAgent = navigator.userAgent;
+                userAgent = (navigator.userAgent || navigator.vendor);
             }
         }
         else {

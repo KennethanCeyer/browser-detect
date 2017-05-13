@@ -27,7 +27,7 @@ gulp.task('clean', function () {
 
 gulp.task('scripts', ['clean'], function () {
     return gulp.src(paths.scripts)
-        .pipe(sourcemaps.init())
+        //.pipe(sourcemaps.init())
         .pipe(requirejsOptimize({
             optimize: 'none'
         }))
@@ -65,7 +65,7 @@ gulp.task('scripts', ['clean'], function () {
         }))
         .pipe(gulp.dest('dist'))
         .pipe(uglify())
-        .pipe(sourcemaps.write())
+        //.pipe(sourcemaps.write())
         .pipe(rename('browser-detect.min.js'))
         .pipe(gulp.dest('dist'));
 });
