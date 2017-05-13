@@ -485,23 +485,25 @@ if (Array.prototype.filter === undefined) {
 ;
 define("polyfills", function () {});
 
-function browserDetector(navigator) {
-    if (typeof navigator === 'undefined' && typeof process === 'undefined') {
-        throw 'Please give navigator.\n' + '> browser(navigator or window.navigator)';
-    } else if (typeof process !== 'undefined') {
-        return {
-            name: 'node',
-            version: process.version.slice(1)
-        };
+function browserDetector(userAgent) {
+    if (typeof userAgent === 'undefined') {
+        if (typeof process !== 'undefined') {
+            return {
+                name: 'node',
+                version: process.version.slice(1)
+            };
+        } else {
+            throw 'Please give user-agent.\n' + '> browser(navigator.userAgent or res.headers[\'user-agent\']).';
+        }
     }
 
     // * Referenced DamonOehlman/detect-browser
     var browsers = [['edge', /Edge\/([0-9\._]+)/], ['yandexbrowser', /YaBrowser\/([0-9\._]+)/], ['chrome', /(?!Chrom.*OPR)Chrom(?:e|ium)\/([0-9\.]+)(:?\s|$)/], ['crios', /CriOS\/([0-9\.]+)(:?\s|$)/], ['firefox', /Firefox\/([0-9\.]+)(?:\s|$)/], ['opera', /Opera\/([0-9\.]+)(?:\s|$)/], ['opera', /OPR\/([0-9\.]+)(:?\s|$)$/], ['ie', /Trident\/7\.0.*rv\:([0-9\.]+)\).*Gecko$/], ['ie', /MSIE\s([0-9\.]+);.*Trident\/[4-7].0/], ['ie', /MSIE\s(7\.0)/], ['bb10', /BB10;\sTouch.*Version\/([0-9\.]+)/], ['android', /Android\s([0-9\.]+)/], ['ios', /Version\/([0-9\._]+).*Mobile.*Safari.*/], ['safari', /Version\/([0-9\._]+).*Safari/]];
 
     return browsers.filter(function (element) {
-        return element[1].test(navigator.userAgent);
+        return element[1].test(userAgent);
     }).map(function (element) {
-        var match = element[1].exec(navigator.userAgent);
+        var match = element[1].exec(userAgent);
         var version = match && match[1].split(/[._]/).slice(0, 3);
         var versionTails = Array.prototype.slice.call(version, 1).join('') || '0';
 
@@ -522,9 +524,19 @@ define('browser-detect', ['polyfills'], function () {
 });
 
 define('main', ['browser-detect'], function (browserDetect) {
-    return function () {
-        var navigator = typeof window !== 'undefined' ? window.navigator : navigator;
-        return browserDetect(navigator);
+    return function (_userAgent) {
+        var userAgent;
+        if (typeof _userAgent === 'undefined') {
+            var navigator = typeof window !== 'undefined' ? window.navigator : navigator;
+            if (typeof navigator === 'undefined') {
+                userAgent = undefined;
+            } else {
+                userAgent = navigator.userAgent;
+            }
+        } else {
+            userAgent = _userAgent;
+        }
+        return browserDetect(userAgent);
     };
 });
     return _require('main');

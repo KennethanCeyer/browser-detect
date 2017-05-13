@@ -1,13 +1,15 @@
-function browserDetector(navigator) {
-    if (typeof navigator === 'undefined' && typeof process === 'undefined') {
-        throw 'Please give navigator.\n' +
-              '> browser(navigator or window.navigator)';
-    }
-    else if (typeof process !== 'undefined') {
-        return {
-            name: 'node',
-            version: process.version.slice(1)
-        };
+function browserDetector(userAgent) {
+    if (typeof userAgent === 'undefined') {
+        if (typeof process !== 'undefined') {
+            return {
+                name: 'node',
+                version: process.version.slice(1)
+            };
+        }
+        else {
+            throw 'Please give user-agent.\n' +
+                  '> browser(navigator.userAgent or res.headers[\'user-agent\']).';
+        }
     }
 
     // * Referenced DamonOehlman/detect-browser
@@ -30,10 +32,10 @@ function browserDetector(navigator) {
 
     return browsers
         .filter(element => {
-            return element[1].test(navigator.userAgent);
+            return element[1].test(userAgent);
         })
         .map(element => {
-            var match = element[1].exec(navigator.userAgent);
+            var match = element[1].exec(userAgent);
             var version = match && match[1].split(/[._]/).slice(0, 3);
             var versionTails = Array.prototype.slice.call(version, 1).join('') || '0';
 
