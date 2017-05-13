@@ -52,11 +52,12 @@ Add following code in your `head` tag.
 And follow this code to detect browser.
 
 ```javascript
-console.log(browser());
+var result = browser();
+console.log(result);
 ```
 
 ```bash
-> { name: 'chrome', version: '58.0.3029', versionNumber: 58.03029 } # CHROME 58.0.3029
+> { name: 'chrome', version: '58.0.3029', versionNumber: 58.03029 } # Chrome v58.0.3029
 ```
 
 **Server (node)**
@@ -70,7 +71,65 @@ console.log(result);
 ```
 
 ```bash
-> { name: 'ie', version: '9.0.0', versionNumber: 9 } # IE 9
+> { name: 'node', version: '7.9.0', versionNumber: 7.9 } # Node v7.9
+```
+
+**Server (node with express)**
+
+Using `req.headers` like following code.
+
+```javascript
+var router = express.Router();
+var browser = require('browser-detect');
+
+router.get('/', function (req, res, next) {
+    var result = browser(req.headers['user-agent']);
+    console.log(result);
+});
+
+return router;
+```
+
+```bash
+> { name: 'ie', version: '9.0', versionNumber: 9 } # IE 9
+```
+
+Or set a middleware and send to `res.locals`.
+
+```javascript
+// browserDetectMiddleware.js
+var browser = require('browser-detect');
+
+var MiddleWare = function() {
+    return function (req, res, next) {
+        res.locals.browser = browser(req.headers['user-agent']);
+        next();
+    };
+};
+
+module.exports = MiddleWare;
+```
+
+```javascript
+// app.js
+
+var express = require('express');
+var browserDetectMiddleware = require('./browserDetectMiddleware');
+
+let app = express();
+app.use(browserDetectMiddleware())
+```
+
+View will can access `browser` variable.
+
+```ejs
+<!-- view.ejs -->
+
+<%=JSON.stringify(browser)%>
+```
+
+```bash
+> { name: 'firefox', version: '53.0.0', versionNumber: 53 } // Firefox v 53.0.0
 ```
 
 ----
