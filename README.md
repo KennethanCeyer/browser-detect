@@ -13,19 +13,19 @@ And this project is focusing to support client and server(Node).
 
 ### Installation
 
-**Using NPM**
+**\* NPM**
 
 ```bash
 $ npm install browser-detect --save
 ```
 
-**Using Bower**
+**\* Bower**
 
 ```bash
 $ bower install browser-detect --save
 ```
 
-**Using Yarn**
+**\* Yarn**
 
 ```bash
 $ yarn install browser-detect --save
