@@ -208,6 +208,7 @@ $ git clone https://github.com/KennethanCeyer/browser-detect.git
 2. Install all modules from NPM.
 
 ```bash
+$ cd browser-detect
 $ npm install
 ```
 
