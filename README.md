@@ -2,6 +2,8 @@
 
 > Simplify detecting your browser.
 
+[![npm version](https://badge.fury.io/js/browser-detect.svg)](https://badge.fury.io/js/browser-detect) [![Bower version](https://badge.fury.io/bo/browser-catch.svg)](https://badge.fury.io/bo/browser-catch) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![ghit.me](https://ghit.me/badge.svg?repo=KennethanCeyer/browser-detect)](https://ghit.me/repo/KennethanCeyer/browser-detect) [![Join the chat at https://gitter.im/KennethanCeyer/PIGNOSE](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/KennethanCeyer/PIGNOSE?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Star)](https://github.com/KennethanCeyer/browser-detect)
+
 ----
 
 ```plaintext
