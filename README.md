@@ -75,6 +75,24 @@ console.log(result);
 
 ----
 
+### Try with an example
+
+**Client**
+
+- Open `examples/client.html` by your browser.
+
+**Server**
+
+- Open command or terminal.
+- Move directory to `browser-detect` path that you download.
+- Type following code.
+
+```bash
+$ node ./examples/server.js
+```
+
+----
+
 ### Features
 
 - Detect browser both compatible client and server.
