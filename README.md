@@ -179,10 +179,10 @@ $ node ./examples/server.js
 ### Test completed
 
 - IE 7+
-- Chrome (Windows, MAC)
+- Chrome (Windows, MacOS)
 - Edge
 - Firefox
-- Safari (Windows, MAC)
+- Safari (Windows, MacOS)
 - Opera
 
 ### Expected
