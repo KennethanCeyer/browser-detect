@@ -1,6 +1,7 @@
 interface BrowserDetectModel {
     name: String;
-    version: String | Number;
+    version: String;
+    versionNumber: Number;
 }
 
 interface BrowserDetect {

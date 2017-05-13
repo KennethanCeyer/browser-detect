@@ -35,6 +35,7 @@ function browserDetector(navigator) {
         .map(element => {
             var match = element[1].exec(navigator.userAgent);
             var version = match && match[1].split(/[._]/).slice(0, 3);
+            var versionTails = Array.prototype.slice.call(version, 1).join('') || '0';
 
             if (version && version.length < 3) {
                 Array.prototype.push.apply(version, (version.length === 1) ? [0, 0] : [0]);
@@ -42,7 +43,8 @@ function browserDetector(navigator) {
 
             return {
                 name: element[0],
-                version: version.join('.')
+                version: version.join('.'),
+                versionNumber: parseFloat(version[0] + '.' + versionTails)
             };
         }).shift();
 };
