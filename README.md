@@ -70,7 +70,7 @@ console.log(result);
 ```
 
 ```bash
-> { name: 'ie', version: '9.0' } # IE 9
+> { name: 'ie', version: '9.0.0' } # IE 9
 ```
 
 ----
@@ -100,15 +100,20 @@ $ node ./examples/server.js
 
 ----
 
+### Completed
+
+- Support typings.
+- Support guideline and documentations for contributors.
+
+----
+
 ### Plan for near *near*, **very near** future.
 
 - Support Webpack2.x.
-- Support typings.
 - Support TDD.
 - Support CI.
-- Support browser compatity.
+- Support browser compatity to IE7.
 - Suport CDN.
-- Support guideline and documentations for contributors.
 
 ----
 
