@@ -35,12 +35,14 @@ define(() => {
     })(String.prototype.trim);
 
     (method => {
-        Array.prototype.map = function(fn) {
-            var rv = [];                
-            for(var i=0, l=this.length; i<l; i++)
-            rv.push(fn(this[i]));
-            return rv;
-        };
+        if (typeof method === 'undefined') {
+            Array.prototype.map = function(fn) {
+                var rv = [];                
+                for(var i=0, l=this.length; i<l; i++)
+                    rv.push(fn(this[i]));
+                return rv;
+            };
+        }
     })(Array.prototype.map);
 
     (method => {
@@ -48,7 +50,7 @@ define(() => {
             Array.prototype.filter = function(fn) {
                 var rv = [];            
                 for(var i=0, l=this.length; i<l; i++)
-                if (fn(this[i])) rv.push(this[i]);
+                    if (fn(this[i])) rv.push(this[i]);
                 return rv;
             };
         }
