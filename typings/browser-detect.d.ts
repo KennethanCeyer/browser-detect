@@ -2,6 +2,8 @@ interface BrowserDetectModel {
     name: String;
     version: String;
     versionNumber: Number;
+    mobile: Boolean;
+    os: String;
 }
 
 interface BrowserDetect {
