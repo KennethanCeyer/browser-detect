@@ -162,16 +162,16 @@ $ node ./examples/server.js
 - Support typings.
 - Support guideline and documentations for contributors.
 - Support browser compatity to IE7.
+- Support to detect mobile and OS.
 
 ----
 
 ### Plan for near *near*, **very near** future.
 
-- Support Webpack2.x.
-- Support TDD.
-- Support CI.
-- Suport CDN.
-- Support to detect mobile and OS.
+- Support Webpack2.x. (Including build process with reactjs or angular4.x)
+- Support TDD. (Mocha)
+- Support CI. (TravisCI)
+- Suport CDN. (JSDelivr)
 
 ----
 
@@ -185,13 +185,13 @@ $ node ./examples/server.js
 - Firefox
 - Safari (Windows, MacOS)
 - Opera
+- Android
+- Chromium Browsers (Will be named chrome)
 
 ### Expected
 
-- Android
 - IOS
 - Window phone (Edge)
-- Chromium Browsers (Will be named chrome)
 - IE 6
 
 ----
