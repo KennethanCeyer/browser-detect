@@ -30,7 +30,7 @@ $ bower install browser-catch --save
 **\* Yarn**
 
 ```bash
-$ yarn install browser-detect --save
+$ yarn add browser-detect
 ```
 
 **\* Download zip**
