@@ -138,7 +138,7 @@ View will can access `browser` variable.
 
 - **name**
 
-  Name of browser as `ie`, `chrome`, `firefox`.
+  Name of browser such as `ie`, `chrome`, `firefox`.
 
 - **version**
 
@@ -154,7 +154,7 @@ View will can access `browser` variable.
  
 - **os**
 
-  User OS type as like `Windows NT 10.0`.
+  User OS type such as `Windows NT 10.0`.
 
 ----
 
