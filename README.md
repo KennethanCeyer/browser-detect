@@ -134,6 +134,30 @@ View will can access `browser` variable.
 
 ----
 
+### Values
+
+- **name**
+
+  Name of browser as `ie`, `chrome`, `firefox`.
+
+- **version**
+
+  Version of browser with comma (string).
+ 
+- **versionNumber**
+
+  Version of browser of which format is only number.
+ 
+- **mobile**
+
+  If browser is based mobile device it will be `true`, and if is not `false`.
+ 
+- **os**
+
+  User OS type as like `Windows NT 10.0`.
+
+----
+
 ### Try with an example
 
 **Client**
