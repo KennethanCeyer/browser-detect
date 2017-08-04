@@ -113,8 +113,8 @@ module.exports = MiddleWare;
 ```javascript
 // app.js
 
-var express = require('express');
-var browserDetectMiddleware = require('./browserDetectMiddleware');
+const express = require('express');
+const browserDetectMiddleware = require('./browserDetectMiddleware');
 
 let app = express();
 app.use(browserDetectMiddleware())
