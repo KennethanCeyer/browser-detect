@@ -150,7 +150,7 @@ browserDetector.os = (userAgent) => {
             }
 
             if (element.pattern && element.name) {
-                os = os.replace(RegExp(pattern, 'i'), element.name);
+                os = os.replace(RegExp(element.pattern, 'i'), element.name);
             }
 
             os = os
