@@ -12,7 +12,7 @@ describe('Browser dection', () => {
     it('detects Chrome on ChromeOS', () => {
       const userAgent = 'Mozilla/5.0 (X11; CrOS x86_64 9765.73.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.110 Safari/537.36'
 
-      expect(browser(userAgent).os).to.equal('OS X 10.11.6')
+      expect(browser(userAgent).os).to.equal('Chrome OS x86_64')
     })
   })
 })
