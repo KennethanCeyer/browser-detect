@@ -28,6 +28,7 @@
   "devDependencies": {
     "almond": "^0.3.3",
     "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.1.2",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
@@ -37,6 +38,7 @@
     "gulp-requirejs-optimize": "^1.2.0",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-uglify": "^2.1.2",
-    "gulp-umd": "^0.2.1"
+    "gulp-umd": "^0.2.1",
+    "mocha": "^4.0.1"
   }
 }
