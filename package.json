@@ -5,7 +5,8 @@
   "main": "dist/browser-detect.js",
   "typings": "typings/browser-detect.d.ts",
   "scripts": {
-    "test": "node test"
+    "test": "node test",
+    "test:unit": "gulp test"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,7 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.1",
+    "gulp-mocha": "^4.3.1",
     "gulp-rename": "^1.2.2",
     "gulp-requirejs": "^1.0.0-rc2",
     "gulp-requirejs-optimize": "^1.2.0",
