@@ -1,4 +1,4 @@
-import {BrowserDefinition, OsDefinition, OsVersionMapDefinition} from './interface';
+import { BrowserDefinition, OsDefinition, OsVersionMapDefinition } from './interface';
 
 export const browsers: BrowserDefinition[] = [
     ['edge', /Edge\/([0-9\._]+)/],
@@ -14,14 +14,14 @@ export const browsers: BrowserDefinition[] = [
     ['bb10', /BB10;\sTouch.*Version\/([0-9\.]+)/],
     ['android', /Android\s([0-9\.]+)/],
     ['ios', /Version\/([0-9\._]+).*Mobile.*Safari.*/],
-    ['safari', /Version\/([0-9\._]+).*Safari/]
+    ['safari', /Version\/([0-9\._]+).*Safari/],
 ];
 
 export const os: OsDefinition[] = [
     'Windows Phone',
     'Android',
     'CentOS',
-    {'name': 'Chrome OS', 'pattern': 'CrOS'},
+    { 'name': 'Chrome OS', 'pattern': 'CrOS' },
     'Debian',
     'Fedora',
     'FreeBSD',
@@ -46,7 +46,7 @@ export const os: OsDefinition[] = [
     'Macintosh',
     'Mac',
     'Windows 98;',
-    'Windows '
+    'Windows ',
 ];
 
 export const osVersions: OsVersionMapDefinition = {
@@ -61,5 +61,5 @@ export const osVersions: OsVersionMapDefinition = {
     '5.01': '2000 SP1',
     '5.0': '2000',
     '4.0': 'NT',
-    '4.90': 'ME'
+    '4.90': 'ME',
 };

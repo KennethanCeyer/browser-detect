@@ -1,4 +1,4 @@
-export type BrowserDefinition = Array<string | RegExp>;
+export type BrowserDefinition = (string | RegExp)[];
 
 export interface OsDefinitionImpl {
     name: string;

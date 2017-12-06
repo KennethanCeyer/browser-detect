@@ -1,10 +1,11 @@
 {
   "name": "browser-detect",
-  "version": "0.2.20",
+  "version": "0.2.21",
   "description": "Simplify detecting your browser.",
   "main": "dist/browser-detect.js",
   "scripts": {
-    "build": "npx webpack --config webpack.config.babel.js"
+    "build": "npx webpack --config webpack.config.babel.js",
+    "lint": "npx tslint -c tslint.json src/**/*.ts"
   },
   "repository": {
     "type": "git",
@@ -20,8 +21,6 @@
   ],
   "author": "PIGNOSE <kennethan@nhpcw.com>",
   "license": "MIT",
-  "types": "./types/browser-detect.d.ts",
-  "typings": "./types/browser-detect.d.ts",
   "bugs": {
     "url": "https://github.com/KennethanCeyer/browser-detect/issues"
   },
@@ -34,6 +33,8 @@
     "babel-register": "^6.26.0",
     "dts-gen": "^0.5.7",
     "ts-loader": "^3.2.0",
+    "tslint": "^5.8.0",
+    "tslint-config-airbnb": "^5.4.2",
     "typescript": "^2.6.2",
     "webpack": "^3.10.0"
   },
