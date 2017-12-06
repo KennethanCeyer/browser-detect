@@ -1,3 +1,3 @@
-var browser = require('../dist/browser-detect');
+const browser = require('../types/browser-detect');
 
 console.log(browser());
