@@ -21,6 +21,8 @@
   ],
   "author": "PIGNOSE <kennethan@nhpcw.com>",
   "license": "MIT",
+  "types": "./types/browser-detect.d.ts",
+  "typings": "./types/browser-detect.d.ts",
   "bugs": {
     "url": "https://github.com/KennethanCeyer/browser-detect/issues"
   },
