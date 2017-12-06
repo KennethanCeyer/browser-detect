@@ -131,7 +131,7 @@ module.exports = MiddleWare;
 const express = require('express');
 const browserDetectMiddleware = require('./browserDetectMiddleware');
 
-let app = express();
+const app = express();
 app.use(browserDetectMiddleware())
 ```
 
@@ -203,13 +203,13 @@ $ node ./examples/server.js
 - Support browser compatity to IE7.
 - Support to detect mobile and OS.
 - Support Webpack2.x. (Including build process with reactjs or angular4.x)
+- Support CI. (TravisCI)
 
 ----
 
 ### Plan for near *near*, **very near** future.
 
 - Support TDD. (UnitTest, e2e Test)
-- Support CI. (TravisCI)
 - Suport CDN. (JSDelivr)
 
 ----
