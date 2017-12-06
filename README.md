@@ -255,9 +255,8 @@ $ npm run build
 ## Contributors
 
 - [![vlewin](https://avatars3.githubusercontent.com/u/611466?s=30&v=4) **vlewin**](https://github.com/vlewin)
-
- - fix pattern issue [#2](https://github.com/KennethanCeyer/browser-detect/issues/2)
- - add unit test with mocha + chai
+  - fix pattern issue [#2](https://github.com/KennethanCeyer/browser-detect/issues/2)
+  - add unit test with mocha + chai
  
 ----
 
