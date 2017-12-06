@@ -7,7 +7,7 @@
     "build": "webpack --config webpack.config.babel.js",
     "lint": "tslint -c tslint.json src/**/*.ts",
     "test": "nyc mocha",
-    "coverage": "nyc report --reporter=text-lcov > ./coverage/coverage.lcov && cat ./coverage/coverage.lcov | npx coveralls && npx codecov -t 5be80c5d-5d6f-4566-b3ee-338446ccb3cd | CODECLIMATE_REPO_TOKEN=3638311d28b61d4720a6e9b45382e55bbb04c78535e1684c6c5b74462a38b9fd codeclimate-test-reporter < ./coverage/coverage.lcov"
+    "coverage": "nyc report --reporter=text-lcov > ./coverage/coverage.lcov && cat ./coverage/coverage.lcov | npx coveralls && npx codecov -t 5be80c5d-5d6f-4566-b3ee-338446ccb3cd && CODECLIMATE_REPO_TOKEN=3638311d28b61d4720a6e9b45382e55bbb04c78535e1684c6c5b74462a38b9fd codeclimate-test-reporter < ./coverage/coverage.lcov"
   },
   "nyc": {
     "all": true,
