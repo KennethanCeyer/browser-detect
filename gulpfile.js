@@ -3,6 +3,7 @@ var babel = require('gulp-babel');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var umd = require('gulp-umd');
+var mocha = require('gulp-mocha');
 var requirejsOptimize = require('gulp-requirejs-optimize');
 var sourcemaps = require('gulp-sourcemaps');
 var del = require('del');
@@ -72,6 +73,11 @@ gulp.task('scripts', ['clean'], function () {
 
 gulp.task('watch', function () {
     gulp.watch(paths.watch, ['scripts']);
+});
+
+
+gulp.task('test', ['scripts'], function () {
+    gulp.src("./test/unit/", {read:false}).pipe(mocha({reporter:'spec'}));
 });
 
 gulp.task('default', ['scripts']);

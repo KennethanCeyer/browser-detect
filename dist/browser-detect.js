@@ -614,7 +614,7 @@ browserDetector.os = function (userAgent) {
         }
 
         if (element.pattern && element.name) {
-            os = os.replace(RegExp(pattern, 'i'), element.name);
+            os = os.replace(RegExp(element.pattern, 'i'), element.name);
         }
 
         os = os.replace(/ ce$/i, ' CE').replace(/\bhpw/i, 'web').replace(/\bMacintosh\b/, 'Mac OS').replace(/_PowerPC\b/i, ' OS').replace(/\b(OS X) [^ \d]+/i, '$1').replace(/\bMac (OS X)\b/, '$1').replace(/\/(\d)/, ' $1').replace(/_/g, '.').replace(/(?: BePC|[ .]*fc[ \d.]+)$/i, '').replace(/\bx86\.64\b/gi, 'x86_64').replace(/\b(Windows Phone) OS\b/, '$1').replace(/\b(Chrome OS \w+) [\d.]+\b/, '$1').split(' on ')[0].trim();
