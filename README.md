@@ -257,6 +257,24 @@ $ npm install npx -g
 $ npm run build
 ```
 
+**Testing**
+
+1. run npm scripts
+```bash
+$ npm run test
+```
+
+2. if you need coverage report try as follows
+```bash
+$ npm run coverage
+```
+
+**Linting**
+1. browser-detect is used tslint
+```bash
+$ npm run lint
+```
+
 ----
 
 ## Contributors
