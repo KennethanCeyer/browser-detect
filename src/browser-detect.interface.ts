@@ -1,14 +1,14 @@
 export type BrowserDefinition = (string | RegExp)[];
 
-export interface OsDefinitionImpl {
+export interface OsDefinitionInterface {
     name: string;
     pattern: string;
     value?: RegExpExecArray | null;
 }
 
-export type OsDefinition = OsDefinitionImpl | string;
+export type OsDefinition = OsDefinitionInterface | string;
 
-export type OsVersionMapDefinition = {[key: string]: string};
+export type OsVersion = {[key: string]: string};
 
 export interface BrowserDetectInfo {
     name?: string;

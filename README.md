@@ -1,112 +1,136 @@
-# browser-detect
+<p align="center" style="margin-bottom: 2em;"><img width="280px" src="./logo.svg"></p>
 
-> Simplify detecting your browser.
+<p align="center"><a href="https://nodei.co/npm/metric-parser/"><img src="https://nodei.co/npm/metric-parser.png" alt="NPM"></a></p>
 
-[![npm version](https://badge.fury.io/js/browser-detect.svg)](https://badge.fury.io/js/browser-detect)
-[![Bower version](https://badge.fury.io/bo/browser-catch.svg)](https://badge.fury.io/bo/browser-catch)
-[![npm](https://img.shields.io/npm/dm/browser-detect.svg)](https://www.npmjs.com/package/browser-detect)
-[![Join the chat at https://gitter.im/KennethanCeyer/PIGNOSE](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/KennethanCeyer/PIGNOSE?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<p align="center">
+    <a href="https://badge.fury.io/js/browser-detect"><img src="https://badge.fury.io/js/browser-detect.svg" alt="npm version"></a>
+    <a href="https://www.npmjs.com/package/browser-detect"><img src="https://img.shields.io/npm/dm/browser-detect.svg" alt="npm"></a>
+    <a href="https://gitter.im/KennethanCeyer/PIGNOSE?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/KennethanCeyer/PIGNOSE"></a>
+    <a href="https://github.com/KennethanCeyer/browser-detect"><img src="https://img.shields.io/github/stars/KennethanCeyer/browser-detect.svg?style=social&amp;label=Stars" alt="GitHub stars"></a>
+    <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+</p>
 
-[![Build Status](https://travis-ci.org/KennethanCeyer/browser-detect.svg?branch=master)](https://travis-ci.org/KennethanCeyer/browser-detect)
-[![Coverage Status](https://coveralls.io/repos/github/KennethanCeyer/browser-detect/badge.svg?branch=master)](https://coveralls.io/github/KennethanCeyer/browser-detect?branch=master)
-[![codecov](https://codecov.io/gh/KennethanCeyer/browser-detect/branch/master/graph/badge.svg)](https://codecov.io/gh/KennethanCeyer/browser-detect)
+<p align="center">
+    <a href="https://travis-ci.org/KennethanCeyer/browser-detect"><img src="https://travis-ci.org/KennethanCeyer/browser-detect.svg?branch=master" alt="Build Status"></a>
+    <a href="https://coveralls.io/github/KennethanCeyer/browser-detect?branch=master"><img src="https://coveralls.io/repos/github/KennethanCeyer/browser-detect/badge.svg?branch=master" alt="Coverage Status"></a>
+    <a href="https://codecov.io/gh/KennethanCeyer/browser-detect"><img src="https://codecov.io/gh/KennethanCeyer/browser-detect/branch/master/graph/badge.svg" alt="codecov"></a>
+</p>
 
-[![GitHub forks](https://img.shields.io/github/forks/KennethanCeyer/browser-detect.svg?style=social&label=Stars)](https://github.com/KennethanCeyer/browser-detect)
-[![Maintainability](https://api.codeclimate.com/v1/badges/328163587b12cf5cb3aa/maintainability)](https://codeclimate.com/github/KennethanCeyer/browser-detect/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/328163587b12cf5cb3aa/test_coverage)](https://codeclimate.com/github/KennethanCeyer/browser-detect/test_coverage)
+<p align="center">
+    <a href="https://www.codefactor.io/repository/github/kennethanceyer/browser-detect"><img src="https://www.codefactor.io/repository/github/kennethanceyer/browser-detect/badge" alt="CodeFactor"></a>
+    <a href="https://codeclimate.com/github/KennethanCeyer/browser-detect/maintainability"><img src="https://api.codeclimate.com/v1/badges/328163587b12cf5cb3aa/maintainability" alt="Maintainability"></a>
+    <a href="https://codeclimate.com/github/KennethanCeyer/browser-detect/test_coverage"><img src="https://api.codeclimate.com/v1/badges/328163587b12cf5cb3aa/test_coverage" alt="Test Coverage"></a>
+    <a href="https://david-dm.org/KennethanCeyer/browser-detect"><img src="https://david-dm.org/KennethanCeyer/browser-detect/status.svg" alt="dependencies Status"></a>
+    <a href="https://david-dm.org/KennethanCeyer/browser-detect?type=dev"><img src="https://david-dm.org/KennethanCeyer/browser-detect/dev-status.svg" alt="devDependencies Status"></a>
+</p>
 
-[![dependencies Status](https://david-dm.org/KennethanCeyer/browser-detect/status.svg)](https://david-dm.org/KennethanCeyer/browser-detect)
-[![devDependencies Status](https://david-dm.org/KennethanCeyer/browser-detect/dev-status.svg)](https://david-dm.org/KennethanCeyer/browser-detect?type=dev)
+## :package: Installation
 
-----
-
-```plaintext
-This library helps you detect user's browser and version.
-And this project is focusing to support client and server(Node).
-```
-
-## Getting Started
-
-### Installation
-
-**\* NPM**
+#### npm
 
 ```bash
-$ npm install browser-detect --save
+$ npm install browser-detect
 ```
 
-**\* Bower**
-
-```bash
-$ bower install browser-catch --save
-```
-
-**\* Yarn**
+#### yarn
 
 ```bash
 $ yarn add browser-detect
 ```
 
-**\* Download zip**
+## :page_with_curl: Example
 
-[Download zip file from this link](https://github.com/KennethanCeyer/browser-detect/archive/master.zip)
-
-----
-
-### How to use
-
-**Client (browser)**
-
-Add following code in your `head` tag.
+### Web
 
 ```html
-<script src="node_modules/browser-detect/dist/browser-detect.min.js"></script>
+<script src="node_modules/browser-detect/dist/browser-detect.umd.js"></script>
 ```
 
-And follow this code to detect browser.
-
 ```javascript
-var result = browser();
+const result = browserDetect();
 console.log(result);
 ```
 
-```bash
-> { name: 'chrome', version: '58.0.3029', versionNumber: 58.03029, mobile: false, os: 'Windows NT 10.0' } # Chrome v58.0.3029
+**output**
+
+```javascript
+{
+    name: 'chrome',
+    version: '58.0.3029',
+    versionNumber: 58.03029,
+    mobile: false,
+    os: 'Windows NT 10.0'
+}
 ```
 
-**Server (node)**
+### Web with module
+
+```javascript
+import browser from 'browser-detect';
+
+const result = browser();
+console.log(result);
+```
+
+**output**
+
+```javascript
+{
+    name: 'chrome',
+    version: '58.0.3029',
+    versionNumber: 58.03029,
+    mobile: false,
+    os: 'Windows NT 10.0'
+}
+```
+
+### NodeJS
 
 Just simple :trollface:
 
 ```javascript
 const browser = require('browser-detect');
 const result = browser();
+
 console.log(result);
 ```
 
-```bash
-> { name: 'node', version: '7.9.0', versionNumber: 7.9, mobile: false, os: 'win32' } # Node v7.9
+**output**
+
+```javascript
+{
+    name: 'node',
+    version: '9.9.0',
+    versionNumber: 9.9,
+    mobile: false,
+    os: 'win32'
+}
 ```
 
-**Server (node with express)**
-
-Using `req.headers` like following code.
+### NodeJS with Express
 
 ```javascript
 const router = express.Router();
 const browser = require('browser-detect');
 
-router.get('/', function (req, res, next) {
-    var result = browser(req.headers['user-agent']);
+router.get('/', req => {
+    const result = browser(req.headers['user-agent']);
     console.log(result);
 });
 
 return router;
 ```
 
-```bash
-> { name: 'ie', version: '9.0', versionNumber: 9, mobile: false, os: 'Windows NT 10.0' } # IE 9
+**output**
+
+```javascript
+{
+    name: 'ie',
+    version: '9.0',
+    versionNumber: 9,
+    mobile: false,
+    os: 'Windows NT 10.0'
+}
 ```
 
 Or set a middleware and send to `res.locals`.
@@ -115,11 +139,9 @@ Or set a middleware and send to `res.locals`.
 // browserDetectMiddleware.js
 const browser = require('browser-detect');
 
-const MiddleWare = () => {
-    return (req, res, next) => {
-        res.locals.browser = browser(req.headers['user-agent']);
-        next();
-    };
+const MiddleWare = () => req => {
+    res.locals.browser = browser(req.headers['user-agent']);
+    next();
 };
 
 module.exports = MiddleWare;
@@ -143,150 +165,98 @@ View will can access `browser` variable.
 <%=JSON.stringify(browser)%>
 ```
 
-```bash
-> { name: 'firefox', version: '53.0.0', versionNumber: 53, mobile: false, os: 'Windows NT 10.0' } // Firefox v 53.0.0
+**output**
+
+```javascript
+"{ name: 'firefox', version: '53.0.0', versionNumber: 53, mobile: false, os: 'Windows NT 10.0' }"
 ```
 
-----
+## :page_with_curl: Demo
 
-### Values
+#### Web
 
-- **name**
+- open `examples/client.html` by your browser.
 
-  Name of browser such as `ie`, `chrome`, `firefox`.
+#### NodeJS
 
-- **version**
-
-  Version of browser with comma (string).
- 
-- **versionNumber**
-
-  Version of browser of which format is only number.
- 
-- **mobile**
-
-  If browser is based mobile device it will be `true`, and if is not `false`.
- 
-- **os**
-
-  User OS type such as `Windows NT 10.0`.
-
-----
-
-### Try with an example
-
-**Client**
-
-- Open `examples/client.html` by your browser.
-
-**Server**
-
-- Open command or terminal.
-- Move directory to `browser-detect` path that you download.
-- Type following code.
+- open command or terminal
+- move directory to `browser-detect` path that you download
+- type following code
 
 ```bash
 $ node ./examples/server.js
 ```
 
-----
+## :zap: Type
 
-## Features
 
-- Detect browser both compatible client and server.
-- Support AMD and CommonJS module feature.
+| name | type | description | example |
+| ---- | ---- | ----------- | ------- |
+| name | string | a browser name | ie, chrome, firefox |
+| version | string | browser or node version | 59.2.22 |
+| versionNumber | number | browser or node number casted to number | 59.222 |
+| mobile | boolean | if browser is in mobile environment, it will be true | ture |
+| os | string | os type name | Windows NT 10.0 |
 
-### Completed
+## :triangular_flag_on_post: Roadmap
 
-- Support typings.
-- Support guideline and documentations for contributors.
-- Support browser compatity to IE7.
-- Support to detect mobile and OS.
-- Support Webpack2.x. (Including build process with reactjs or angular4.x)
-- Support CI. (TravisCI)
+- [x] detect browser both compatible client and server
+- [x] support AMD and CommonJS module feature
+- [x] support typings
+- [x] support guideline and documentations for contributors
+- [x] support browser compatity to IE7
+- [x] support to detect mobile and OS
+- [x] support CI (TravisCI)
+- [x] support unit tests
+- [ ] support e2e tests
+- [ ] suport cdn
 
-----
+## :mag_right: Compatibility
 
-### Plan for near *near*, **very near** future.
+- [x] IE 7+
+- [x] Chrome (Windows, MacOS)
+- [x] Edge
+- [x] Firefox
+- [x] Safari (Windows, MacOS)
+- [x] Opera
+- [x] Android
+- [x] Chromium Browsers (Will be named chrome)
 
-- Support TDD. (UnitTest, e2e Test)
-- Suport CDN. (JSDelivr)
+## :octocat: Contribution
 
-----
+### environment
 
-## Compatibility
+1. clone project from Github
 
-### Test completed
-
-- IE 7+
-- Chrome (Windows, MacOS)
-- Edge
-- Firefox
-- Safari (Windows, MacOS)
-- Opera
-- Android
-- Chromium Browsers (Will be named chrome)
-
-### Expected
-
-- IOS
-- Window phone (Edge)
-- IE 6
-
-----
-
-## Contribution
-
-**Setting environment for contribute**
-
-1. Install project from GitHub
 ```bash
 $ git clone git@github.com:KennethanCeyer/browser-detect.git
 ```
-2. Install all modules from NPM
+
+2. install npm packages
+
 ```bash
 $ cd browser-detect
 $ npm install
 ```
-3. Install npx
-```bash
-$ npm install npx -g
-```
-4. Build sources
+
+3. build sources
+
 ```bash
 $ npm run build
 ```
 
-**Testing**
+### test
 
-1. run npm scripts
 ```bash
 $ npm run test
 ```
 
-2. if you need coverage report try as follows
-```bash
-$ npm run coverage
-```
-
-**Linting**
-1. browser-detect is used tslint
-```bash
-$ npm run lint
-```
-
-----
-
-## Contributors
+## :yellow_heart: Contributors
 
 - [![vlewin](https://avatars3.githubusercontent.com/u/611466?s=30&v=4) **vlewin**](https://github.com/vlewin)
   - fix pattern issue [#2](https://github.com/KennethanCeyer/browser-detect/issues/2)
   - add unit test with mocha + chai
- 
-----
 
-## License
+## :mag_right: License
 
-`browser-detect` is under MIT license
-
-of cource, You can use it, modify it and contribute it :trollface:
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FKennethanCeyer%2Fbrowser-detect.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FKennethanCeyer%2Fbrowser-detect?ref=badge_large)
