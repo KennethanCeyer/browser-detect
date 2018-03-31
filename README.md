@@ -6,7 +6,7 @@
     <a href="https://badge.fury.io/js/browser-detect"><img src="https://badge.fury.io/js/browser-detect.svg" alt="npm version"></a>
     <a href="https://www.npmjs.com/package/browser-detect"><img src="https://img.shields.io/npm/dm/browser-detect.svg" alt="npm"></a>
     <a href="https://gitter.im/KennethanCeyer/PIGNOSE?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/KennethanCeyer/PIGNOSE"></a>
-    <a href="https://github.com/KennethanCeyer/browser-detect"><img src="https://img.shields.io/github/forks/KennethanCeyer/browser-detect.svg?style=social&amp;label=Stars" alt="GitHub stars"></a>
+    <a href="https://github.com/KennethanCeyer/browser-detect"><img src="https://img.shields.io/github/stars/KennethanCeyer/browser-detect.svg?style=social&amp;label=Stars" alt="GitHub stars"></a>
     <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
 </p>
 
