@@ -1,6 +1,4 @@
-# browser-detect
-
-> Simplify detecting your browser.
+<p align="center" style="margin-bottom: 2em;"><img width="280px" src="./logo.svg"></p>
 
 <p align="center"><a href="https://nodei.co/npm/metric-parser/"><img src="https://nodei.co/npm/metric-parser.png" alt="NPM"></a></p>
 
@@ -26,42 +24,40 @@
     <a href="https://david-dm.org/KennethanCeyer/browser-detect?type=dev"><img src="https://david-dm.org/KennethanCeyer/browser-detect/dev-status.svg" alt="devDependencies Status"></a>
 </p>
 
-## Getting Started
+## Installation
 
-### Installation
-
-**\* npm**
+#### npm
 
 ```bash
 $ npm install browser-detect
 ```
 
-**\* yarn**
+#### yarn
 
 ```bash
 $ yarn add browser-detect
 ```
 
-**\* zip**
+#### zip
 
 > [donwload zip link](https://github.com/KennethanCeyer/browser-detect/archive/master.zip)
 
 ----
 
-### Example
+## Example
 
-**Client (Web)**
+### Web (without module)
 
-Add following code in your `head` tag.
+1. Add following code in your `head` tag.
 
 ```html
-<script src="node_modules/browser-detect/dist/browser-detect.min.js"></script>
+<script src="node_modules/browser-detect/dist/browser-detect.umd.js"></script>
 ```
 
-And follow this code to detect browser.
+2. And follow this code to detect browser.
 
 ```javascript
-const result = browser();
+const result = browserDetect();
 console.log(result);
 ```
 
@@ -75,7 +71,16 @@ console.log(result);
 }
 ```
 
-**Server (NodeJS)**
+### Web (with module)
+
+```javascript
+import browser from 'browser-detect';
+
+const result = browser();
+console.log(result);
+```
+
+### NodeJS
 
 Just simple :trollface:
 
@@ -96,7 +101,7 @@ console.log(result);
 }
 ```
 
-**Server (NodeJS with Express)**
+### NodeJS with Express
 
 Using `req.headers` like following code.
 
