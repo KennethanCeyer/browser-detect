@@ -24,7 +24,7 @@
     <a href="https://david-dm.org/KennethanCeyer/browser-detect?type=dev"><img src="https://david-dm.org/KennethanCeyer/browser-detect/dev-status.svg" alt="devDependencies Status"></a>
 </p>
 
-## Installation
+## :package: Installation
 
 #### npm
 
@@ -38,7 +38,7 @@ $ npm install browser-detect
 $ yarn add browser-detect
 ```
 
-## Example
+## :page_with_curl: Example
 
 ### Web
 
@@ -171,18 +171,7 @@ View will can access `browser` variable.
 "{ name: 'firefox', version: '53.0.0', versionNumber: 53, mobile: false, os: 'Windows NT 10.0' }"
 ```
 
-## Result type
-
-
-| name | type | description | example |
-| ---- | ---- | ----------- | ------- |
-| name | string | a browser name | ie, chrome, firefox |
-| version | string | browser or node version | 59.2.22 |
-| versionNumber | number | browser or node number casted to number | 59.222 |
-| mobile | boolean | if browser is in mobile environment, it will be true | ture |
-| os | string | os type name | Windows NT 10.0 |
-
-## Demo
+## :page_with_curl: Demo
 
 #### Web
 
@@ -198,7 +187,18 @@ View will can access `browser` variable.
 $ node ./examples/server.js
 ```
 
-## Roadmap
+## :zap: Type
+
+
+| name | type | description | example |
+| ---- | ---- | ----------- | ------- |
+| name | string | a browser name | ie, chrome, firefox |
+| version | string | browser or node version | 59.2.22 |
+| versionNumber | number | browser or node number casted to number | 59.222 |
+| mobile | boolean | if browser is in mobile environment, it will be true | ture |
+| os | string | os type name | Windows NT 10.0 |
+
+## :triangular_flag_on_post: Roadmap
 
 - [x] detect browser both compatible client and server
 - [x] support AMD and CommonJS module feature
@@ -211,7 +211,7 @@ $ node ./examples/server.js
 - [ ] support e2e tests
 - [ ] suport cdn
 
-## Compatibility
+## :mag_right: Compatibility
 
 - [x] IE 7+
 - [x] Chrome (Windows, MacOS)
@@ -222,7 +222,7 @@ $ node ./examples/server.js
 - [x] Android
 - [x] Chromium Browsers (Will be named chrome)
 
-## Contribution
+## :octocat: Contribution
 
 ### environment
 
@@ -251,12 +251,12 @@ $ npm run build
 $ npm run test
 ```
 
-## Contributors
+## :yellow_heart: Contributors
 
 - [![vlewin](https://avatars3.githubusercontent.com/u/611466?s=30&v=4) **vlewin**](https://github.com/vlewin)
   - fix pattern issue [#2](https://github.com/KennethanCeyer/browser-detect/issues/2)
   - add unit test with mocha + chai
 
-## License
+## :mag_right: License
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FKennethanCeyer%2Fbrowser-detect.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FKennethanCeyer%2Fbrowser-detect?ref=badge_large)
