@@ -2,23 +2,29 @@
 
 > Simplify detecting your browser.
 
-[![NPM](https://nodei.co/npm/metric-parser.png)](https://nodei.co/npm/metric-parser/)
+<p align="center"><a href="https://nodei.co/npm/metric-parser/"><img src="https://nodei.co/npm/metric-parser.png" alt="NPM"></a></p>
 
-[![npm version](https://badge.fury.io/js/browser-detect.svg)](https://badge.fury.io/js/browser-detect)
-[![npm](https://img.shields.io/npm/dm/browser-detect.svg)](https://www.npmjs.com/package/browser-detect)
-[![Join the chat at https://gitter.im/KennethanCeyer/PIGNOSE](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/KennethanCeyer/PIGNOSE?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![GitHub stars](https://img.shields.io/github/forks/KennethanCeyer/browser-detect.svg?style=social&label=Stars)](https://github.com/KennethanCeyer/browser-detect)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<p align="center">
+    <a href="https://badge.fury.io/js/browser-detect"><img src="https://badge.fury.io/js/browser-detect.svg" alt="npm version"></a>
+    <a href="https://www.npmjs.com/package/browser-detect"><img src="https://img.shields.io/npm/dm/browser-detect.svg" alt="npm"></a>
+    <a href="https://gitter.im/KennethanCeyer/PIGNOSE?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/KennethanCeyer/PIGNOSE"></a>
+    <a href="https://github.com/KennethanCeyer/browser-detect"><img src="https://img.shields.io/github/forks/KennethanCeyer/browser-detect.svg?style=social&amp;label=Stars" alt="GitHub stars"></a>
+    <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+</p>
 
-[![Build Status](https://travis-ci.org/KennethanCeyer/browser-detect.svg?branch=master)](https://travis-ci.org/KennethanCeyer/browser-detect)
-[![Coverage Status](https://coveralls.io/repos/github/KennethanCeyer/browser-detect/badge.svg?branch=master)](https://coveralls.io/github/KennethanCeyer/browser-detect?branch=master)
-[![codecov](https://codecov.io/gh/KennethanCeyer/browser-detect/branch/master/graph/badge.svg)](https://codecov.io/gh/KennethanCeyer/browser-detect)
+<p align="center">
+    <a href="https://travis-ci.org/KennethanCeyer/browser-detect"><img src="https://travis-ci.org/KennethanCeyer/browser-detect.svg?branch=master" alt="Build Status"></a>
+    <a href="https://coveralls.io/github/KennethanCeyer/browser-detect?branch=master"><img src="https://coveralls.io/repos/github/KennethanCeyer/browser-detect/badge.svg?branch=master" alt="Coverage Status"></a>
+    <a href="https://codecov.io/gh/KennethanCeyer/browser-detect"><img src="https://codecov.io/gh/KennethanCeyer/browser-detect/branch/master/graph/badge.svg" alt="codecov"></a>
+</p>
 
-[![CodeFactor](https://www.codefactor.io/repository/github/kennethanceyer/browser-detect/badge)](https://www.codefactor.io/repository/github/kennethanceyer/browser-detect)
-[![Maintainability](https://api.codeclimate.com/v1/badges/328163587b12cf5cb3aa/maintainability)](https://codeclimate.com/github/KennethanCeyer/browser-detect/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/328163587b12cf5cb3aa/test_coverage)](https://codeclimate.com/github/KennethanCeyer/browser-detect/test_coverage)
-[![dependencies Status](https://david-dm.org/KennethanCeyer/browser-detect/status.svg)](https://david-dm.org/KennethanCeyer/browser-detect)
-[![devDependencies Status](https://david-dm.org/KennethanCeyer/browser-detect/dev-status.svg)](https://david-dm.org/KennethanCeyer/browser-detect?type=dev)
+<p align="center">
+    <a href="https://www.codefactor.io/repository/github/kennethanceyer/browser-detect"><img src="https://www.codefactor.io/repository/github/kennethanceyer/browser-detect/badge" alt="CodeFactor"></a>
+    <a href="https://codeclimate.com/github/KennethanCeyer/browser-detect/maintainability"><img src="https://api.codeclimate.com/v1/badges/328163587b12cf5cb3aa/maintainability" alt="Maintainability"></a>
+    <a href="https://codeclimate.com/github/KennethanCeyer/browser-detect/test_coverage"><img src="https://api.codeclimate.com/v1/badges/328163587b12cf5cb3aa/test_coverage" alt="Test Coverage"></a>
+    <a href="https://david-dm.org/KennethanCeyer/browser-detect"><img src="https://david-dm.org/KennethanCeyer/browser-detect/status.svg" alt="dependencies Status"></a>
+    <a href="https://david-dm.org/KennethanCeyer/browser-detect?type=dev"><img src="https://david-dm.org/KennethanCeyer/browser-detect/dev-status.svg" alt="devDependencies Status"></a>
+</p>
 
 ## Getting Started
 
