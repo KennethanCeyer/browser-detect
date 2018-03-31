@@ -28,6 +28,7 @@
     "exclude": [
       "**/*.spec.ts",
       "**/*.d.ts",
+      "**/*.interface.ts",
       "rollup.config.ts",
       "coverage",
       "docs/",

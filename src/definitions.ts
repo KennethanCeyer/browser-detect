@@ -1,4 +1,4 @@
-import { BrowserDefinition, OsDefinition, OsVersionMapDefinition } from './interface';
+import { BrowserDefinition, OsDefinition, OsVersion } from './browser-detect.interface';
 
 export const browsers: BrowserDefinition[] = [
     ['firefox', /Firefox\/([0-9\.]+)(?:\s|$)/],
@@ -21,7 +21,7 @@ export const os: OsDefinition[] = [
     'Windows Phone',
     'Android',
     'CentOS',
-    { 'name': 'Chrome OS', 'pattern': 'CrOS' },
+    { name: 'Chrome OS', pattern: 'CrOS' },
     'Debian',
     'Fedora',
     'FreeBSD',
@@ -49,7 +49,7 @@ export const os: OsDefinition[] = [
     'Windows '
 ];
 
-export const osVersions: OsVersionMapDefinition = {
+export const osVersions: OsVersion = {
     '10.0': '10',
     '6.4': '10 Technical Preview',
     '6.3': '8.1',

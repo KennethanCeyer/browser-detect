@@ -8,7 +8,7 @@ export interface OsDefinitionInterface {
 
 export type OsDefinition = OsDefinitionInterface | string;
 
-export type OsVersionMapDefinition = {[key: string]: string};
+export type OsVersion = {[key: string]: string};
 
 export interface BrowserDetectInfo {
     name?: string;

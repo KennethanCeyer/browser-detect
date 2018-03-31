@@ -12,6 +12,8 @@
         "max-line-length": [true, 120],
         "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"],
         "prefer-for-of": false,
-        "trailing-comma": false
+        "trailing-comma": false,
+        "object-literal-key-quotes": false,
+        "ter-arrow-parens": false
     }
 }
