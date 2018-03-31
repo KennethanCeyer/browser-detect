@@ -1,9 +1,11 @@
-plugins:
-  tslint:
-    enabled: true
-    config: tslint.json
 exclude_patterns:
 - src/**/*.spec.ts
 - dist/**/*
 - demo/**/*
 - docs/**/*
+
+
+plugins:
+  tslint:
+    enabled: true
+    config: tslint.json
