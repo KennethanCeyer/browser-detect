@@ -171,41 +171,28 @@ View will can access `browser` variable.
 "{ name: 'firefox', version: '53.0.0', versionNumber: 53, mobile: false, os: 'Windows NT 10.0' }"
 ```
 
-----
+## Result type
 
-### Values
 
-- **name**
+| name | type | description | example |
+| ---- | ---- | ----------- | ------- |
+| name | string | a browser name | ie, chrome, firefox |
+| version | string | browser or node version | 59.2.22 |
+| versionNumber | number | browser or node number casted to number | 59.222 |
+| mobile | boolean | if browser is in mobile environment, it will be true | ture |
+| os | string | os type name | Windows NT 10.0 |
 
-  Name of browser such as `ie`, `chrome`, `firefox`.
+## Demo
 
-- **version**
+#### Web
 
-  Version of browser with comma (string).
- 
-- **versionNumber**
+- open `examples/client.html` by your browser.
 
-  Version of browser of which format is only number.
- 
-- **mobile**
+#### NodeJS
 
-  If browser is based mobile device it will be `true`, and if is not `false`.
- 
-- **os**
-
-  User OS type such as `Windows NT 10.0`.
-
-### Try with an example
-
-**Client**
-
-- Open `examples/client.html` by your browser.
-
-**Server**
-
-- Open command or terminal.
-- Move directory to `browser-detect` path that you download.
-- Type following code.
+- open command or terminal
+- move directory to `browser-detect` path that you download
+- type following code
 
 ```bash
 $ node ./examples/server.js
@@ -260,8 +247,6 @@ $ npm run build
 
 ### test
 
-1. run npm scripts
-
 ```bash
 $ npm run test
 ```
@@ -271,7 +256,6 @@ $ npm run test
 - [![vlewin](https://avatars3.githubusercontent.com/u/611466?s=30&v=4) **vlewin**](https://github.com/vlewin)
   - fix pattern issue [#2](https://github.com/KennethanCeyer/browser-detect/issues/2)
   - add unit test with mocha + chai
-
 
 ## License
 
