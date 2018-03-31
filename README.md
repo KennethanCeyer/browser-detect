@@ -38,28 +38,20 @@ $ npm install browser-detect
 $ yarn add browser-detect
 ```
 
-#### zip
-
-> [donwload zip link](https://github.com/KennethanCeyer/browser-detect/archive/master.zip)
-
-----
-
 ## Example
 
-### Web (without module)
-
-1. Add following code in your `head` tag.
+### Web
 
 ```html
 <script src="node_modules/browser-detect/dist/browser-detect.umd.js"></script>
 ```
 
-2. And follow this code to detect browser.
-
 ```javascript
 const result = browserDetect();
 console.log(result);
 ```
+
+**output**
 
 ```javascript
 {
@@ -71,13 +63,25 @@ console.log(result);
 }
 ```
 
-### Web (with module)
+### Web with module
 
 ```javascript
 import browser from 'browser-detect';
 
 const result = browser();
 console.log(result);
+```
+
+**output**
+
+```javascript
+{
+    name: 'chrome',
+    version: '58.0.3029',
+    versionNumber: 58.03029,
+    mobile: false,
+    os: 'Windows NT 10.0'
+}
 ```
 
 ### NodeJS
@@ -91,6 +95,8 @@ const result = browser();
 console.log(result);
 ```
 
+**output**
+
 ```javascript
 {
     name: 'node',
@@ -103,8 +109,6 @@ console.log(result);
 
 ### NodeJS with Express
 
-Using `req.headers` like following code.
-
 ```javascript
 const router = express.Router();
 const browser = require('browser-detect');
@@ -116,6 +120,8 @@ router.get('/', req => {
 
 return router;
 ```
+
+**output**
 
 ```javascript
 {
@@ -159,6 +165,8 @@ View will can access `browser` variable.
 <%=JSON.stringify(browser)%>
 ```
 
+**output**
+
 ```javascript
 "{ name: 'firefox', version: '53.0.0', versionNumber: 53, mobile: false, os: 'Windows NT 10.0' }"
 ```
@@ -187,8 +195,6 @@ View will can access `browser` variable.
 
   User OS type such as `Windows NT 10.0`.
 
-----
-
 ### Try with an example
 
 **Client**
@@ -205,103 +211,68 @@ View will can access `browser` variable.
 $ node ./examples/server.js
 ```
 
-----
+## Roadmap
 
-## Features
-
-- Detect browser both compatible client and server.
-- Support AMD and CommonJS module feature.
-
-### Completed
-
-- Support typings.
-- Support guideline and documentations for contributors.
-- Support browser compatity to IE7.
-- Support to detect mobile and OS.
-- Support Webpack2.x. (Including build process with reactjs or angular4.x)
-- Support CI. (TravisCI)
-
-----
-
-### Plan for near *near*, **very near** future.
-
-- Support TDD. (UnitTest, e2e Test)
-- Suport CDN. (JSDelivr)
-
-----
+- [x] detect browser both compatible client and server
+- [x] support AMD and CommonJS module feature
+- [x] support typings
+- [x] support guideline and documentations for contributors
+- [x] support browser compatity to IE7
+- [x] support to detect mobile and OS
+- [x] support CI (TravisCI)
+- [x] support unit tests
+- [ ] support e2e tests
+- [ ] suport cdn
 
 ## Compatibility
 
-### Test completed
-
-- IE 7+
-- Chrome (Windows, MacOS)
-- Edge
-- Firefox
-- Safari (Windows, MacOS)
-- Opera
-- Android
-- Chromium Browsers (Will be named chrome)
-
-### Expected
-
-- IOS
-- Window phone (Edge)
-
-----
+- [x] IE 7+
+- [x] Chrome (Windows, MacOS)
+- [x] Edge
+- [x] Firefox
+- [x] Safari (Windows, MacOS)
+- [x] Opera
+- [x] Android
+- [x] Chromium Browsers (Will be named chrome)
 
 ## Contribution
 
-**Setting environment for contribute**
+### environment
 
-1. Install project from GitHub
+1. clone project from Github
+
 ```bash
 $ git clone git@github.com:KennethanCeyer/browser-detect.git
 ```
-2. Install all modules from NPM
+
+2. install npm packages
+
 ```bash
 $ cd browser-detect
 $ npm install
 ```
-3. Install npx
-```bash
-$ npm install npx -g
-```
-4. Build sources
+
+3. build sources
+
 ```bash
 $ npm run build
 ```
 
-**Testing**
+### test
 
 1. run npm scripts
+
 ```bash
 $ npm run test
 ```
-
-2. if you need coverage report try as follows
-```bash
-$ npm run coverage
-```
-
-**Linting**
-1. browser-detect is used tslint
-```bash
-$ npm run lint
-```
-
-----
 
 ## Contributors
 
 - [![vlewin](https://avatars3.githubusercontent.com/u/611466?s=30&v=4) **vlewin**](https://github.com/vlewin)
   - fix pattern issue [#2](https://github.com/KennethanCeyer/browser-detect/issues/2)
   - add unit test with mocha + chai
- 
-----
+
 
 ## License
 
-`browser-detect` is under MIT license
-
-of cource, You can use it, modify it and contribute it :trollface:
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FKennethanCeyer%2Fbrowser-detect.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FKennethanCeyer%2Fbrowser-detect?ref=badge_large)
