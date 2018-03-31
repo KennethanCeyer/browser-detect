@@ -6,11 +6,13 @@ before_install:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 install:
-  - npm install -g npx
+  - npm install codecov -g
+  - npm install coveralls -g
+  - npm install codeclimate-test-reporter -g
   - npm install
 script:
-  - npm run lint
-  - npm run test
+  - npm test
 after_success:
-  - npm run coverage
-  - npm run coverage:codeclimate
+  - codecov
+  - coveralls < ./coverage/lcov.info
+  - CODECLIMATE_REPO_TOKEN=3638311d28b61d4720a6e9b45382e55bbb04c78535e1684c6c5b74462a38b9fd codeclimate-test-reporter < ./coverage/lcov.info

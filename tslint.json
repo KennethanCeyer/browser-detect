@@ -1,17 +1,17 @@
 {
-    "defaultSeverity": "error",
-    "extends": [
-        "tslint-config-airbnb"
-    ],
-    "jsRules": {},
+    "extends": "tslint-config-airbnb",
     "rules": {
-        "object-literal-key-quotes": false,
-        "indent": [true, "spaces", 4],
-        "import-name": false,
+        "indent": [true, 4],
         "ter-indent": [true, 4],
+        "curly": false,
+        "brace-style": [true, "1tbs", {
+            "allowSingleLine": true
+        }],
+        "no-namespace": false,
+        "no-conditional-assignment": false,
         "max-line-length": [true, 120],
-        "no-boolean-literal-compare": false,
-        "strict-boolean-expressions": false
-    },
-    "rulesDirectory": []
+        "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"],
+        "prefer-for-of": false,
+        "trailing-comma": false
+    }
 }

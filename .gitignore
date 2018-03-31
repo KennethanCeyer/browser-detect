@@ -1,11 +1,6 @@
-.DS_Store
-build
-node_modules
-npm-debug.log
-
-# Ignore Jetbrains Project File
-.idea
-
-# Ignore coverage
-coverage/
 .nyc_output/
+.rpt2_cache/
+.idea/
+node_modules/
+coverage/
+src/**/*.js

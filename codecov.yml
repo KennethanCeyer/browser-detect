@@ -1,0 +1,7 @@
+ignore:
+  - "demo/"
+  - "dist/"
+  - "src/**/*.js"
+  - "src"**/*.spec.ts"
+  - "src"**/*.d.ts"
+  - "docs/**/*"

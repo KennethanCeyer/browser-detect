@@ -3,7 +3,6 @@
 > Simplify detecting your browser.
 
 [![npm version](https://badge.fury.io/js/browser-detect.svg)](https://badge.fury.io/js/browser-detect)
-[![Bower version](https://badge.fury.io/bo/browser-catch.svg)](https://badge.fury.io/bo/browser-catch)
 [![npm](https://img.shields.io/npm/dm/browser-detect.svg)](https://www.npmjs.com/package/browser-detect)
 [![Join the chat at https://gitter.im/KennethanCeyer/PIGNOSE](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/KennethanCeyer/PIGNOSE?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -13,50 +12,38 @@
 [![codecov](https://codecov.io/gh/KennethanCeyer/browser-detect/branch/master/graph/badge.svg)](https://codecov.io/gh/KennethanCeyer/browser-detect)
 
 [![GitHub forks](https://img.shields.io/github/forks/KennethanCeyer/browser-detect.svg?style=social&label=Stars)](https://github.com/KennethanCeyer/browser-detect)
+[![CodeFactor](https://www.codefactor.io/repository/github/kennethanceyer/browser-detect/badge)](https://www.codefactor.io/repository/github/kennethanceyer/browser-detect)
 [![Maintainability](https://api.codeclimate.com/v1/badges/328163587b12cf5cb3aa/maintainability)](https://codeclimate.com/github/KennethanCeyer/browser-detect/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/328163587b12cf5cb3aa/test_coverage)](https://codeclimate.com/github/KennethanCeyer/browser-detect/test_coverage)
 
 [![dependencies Status](https://david-dm.org/KennethanCeyer/browser-detect/status.svg)](https://david-dm.org/KennethanCeyer/browser-detect)
 [![devDependencies Status](https://david-dm.org/KennethanCeyer/browser-detect/dev-status.svg)](https://david-dm.org/KennethanCeyer/browser-detect?type=dev)
 
-----
-
-```plaintext
-This library helps you detect user's browser and version.
-And this project is focusing to support client and server(Node).
-```
-
 ## Getting Started
 
 ### Installation
 
-**\* NPM**
+**\* npm**
 
 ```bash
-$ npm install browser-detect --save
+$ npm install browser-detect
 ```
 
-**\* Bower**
-
-```bash
-$ bower install browser-catch --save
-```
-
-**\* Yarn**
+**\* yarn**
 
 ```bash
 $ yarn add browser-detect
 ```
 
-**\* Download zip**
+**\* zip**
 
-[Download zip file from this link](https://github.com/KennethanCeyer/browser-detect/archive/master.zip)
+> [donwload zip link](https://github.com/KennethanCeyer/browser-detect/archive/master.zip)
 
 ----
 
-### How to use
+### Example
 
-**Client (browser)**
+**Client (Web)**
 
 Add following code in your `head` tag.
 
@@ -67,29 +54,42 @@ Add following code in your `head` tag.
 And follow this code to detect browser.
 
 ```javascript
-var result = browser();
+const result = browser();
 console.log(result);
 ```
 
-```bash
-> { name: 'chrome', version: '58.0.3029', versionNumber: 58.03029, mobile: false, os: 'Windows NT 10.0' } # Chrome v58.0.3029
+```javascript
+{
+    name: 'chrome',
+    version: '58.0.3029',
+    versionNumber: 58.03029,
+    mobile: false,
+    os: 'Windows NT 10.0'
+}
 ```
 
-**Server (node)**
+**Server (NodeJS)**
 
 Just simple :trollface:
 
 ```javascript
 const browser = require('browser-detect');
 const result = browser();
+
 console.log(result);
 ```
 
-```bash
-> { name: 'node', version: '7.9.0', versionNumber: 7.9, mobile: false, os: 'win32' } # Node v7.9
+```javascript
+{
+    name: 'node',
+    version: '9.9.0',
+    versionNumber: 9.9,
+    mobile: false,
+    os: 'win32'
+}
 ```
 
-**Server (node with express)**
+**Server (NodeJS with Express)**
 
 Using `req.headers` like following code.
 
@@ -97,16 +97,22 @@ Using `req.headers` like following code.
 const router = express.Router();
 const browser = require('browser-detect');
 
-router.get('/', function (req, res, next) {
-    var result = browser(req.headers['user-agent']);
+router.get('/', req => {
+    const result = browser(req.headers['user-agent']);
     console.log(result);
 });
 
 return router;
 ```
 
-```bash
-> { name: 'ie', version: '9.0', versionNumber: 9, mobile: false, os: 'Windows NT 10.0' } # IE 9
+```javascript
+{
+    name: 'ie',
+    version: '9.0',
+    versionNumber: 9,
+    mobile: false,
+    os: 'Windows NT 10.0'
+}
 ```
 
 Or set a middleware and send to `res.locals`.
@@ -115,11 +121,9 @@ Or set a middleware and send to `res.locals`.
 // browserDetectMiddleware.js
 const browser = require('browser-detect');
 
-const MiddleWare = () => {
-    return (req, res, next) => {
-        res.locals.browser = browser(req.headers['user-agent']);
-        next();
-    };
+const MiddleWare = () => req => {
+    res.locals.browser = browser(req.headers['user-agent']);
+    next();
 };
 
 module.exports = MiddleWare;
@@ -143,8 +147,8 @@ View will can access `browser` variable.
 <%=JSON.stringify(browser)%>
 ```
 
-```bash
-> { name: 'firefox', version: '53.0.0', versionNumber: 53, mobile: false, os: 'Windows NT 10.0' } // Firefox v 53.0.0
+```javascript
+"{ name: 'firefox', version: '53.0.0', versionNumber: 53, mobile: false, os: 'Windows NT 10.0' }"
 ```
 
 ----
@@ -231,7 +235,6 @@ $ node ./examples/server.js
 
 - IOS
 - Window phone (Edge)
-- IE 6
 
 ----
 

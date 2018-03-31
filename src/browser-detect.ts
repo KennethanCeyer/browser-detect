@@ -1,86 +1,68 @@
-// Start polyfills
+import { BrowserDetectInfo, OsDefinition, OsDefinitionInterface } from './interface';
+import { browsers, os, osVersions } from './pattern';
 import 'core-js/fn/array/filter';
 import 'core-js/fn/array/map';
 import 'core-js/fn/string/trim';
-// End polyfills
 
-import { BrowserDefinition, BrowserDetectInfo, OsDefinitionImpl, OsDefinition } from './interface';
-import { browsers, os, osVersions } from './pattern';
-
-const navigatorImpl = (typeof window !== 'undefined')
+const navigator = typeof window !== 'undefined'
     ? window.navigator
-    : null;
+    : undefined;
 
-function browserDetector(userAgent: string): BrowserDetectInfo {
-    let passUserAgent: string = userAgent;
-    if (!userAgent)
-        passUserAgent = !navigatorImpl
-            ? ''
-            : (navigatorImpl.userAgent || navigatorImpl.vendor);
-    return runDetect(passUserAgent);
+export default function (userAgent: string): BrowserDetectInfo {
+    const safeUserAgent = userAgent
+        ? userAgent
+        : navigator ? (navigator.userAgent || navigator.vendor) : '';
+    return runDetect(safeUserAgent);
 }
-
-export = browserDetector;
-
-if (typeof window === 'object')
-    window['browser'] = browserDetector;
 
 function runDetect(userAgent: string): BrowserDetectInfo {
     if (typeof process !== 'undefined' && !userAgent) {
-        const version: string[] = process
-            .version
-            .slice(1)
-            .split('.')
-            .slice(0, 3);
-        const versionTails: string = Array.prototype.slice.call(version, 1).join('') || '0';
+        const version = process.version
+            .slice(1) .split('.').slice(0, 3);
+        const versionTail = Array.prototype.slice.call(version, 1).join('') || '0';
 
         return {
             name: 'node',
             version: version.join('.'),
-            versionNumber: parseFloat(version[0] + '.' + versionTails),
+            versionNumber: parseFloat(`${version[0]}.${versionTail}`),
             mobile: false,
-            os: process.platform,
+            os: process.platform
         };
     }
 
     if (!userAgent) {
-        throw 'Please give user-agent.\n' +
-              '> browser(navigator.userAgent or res.headers[\'user-agent\']).';
+        throw new Error('Please give user-agent.\n' +
+        '> browser(navigator.userAgent or res.headers[\'user-agent\']).');
     }
 
     return {
         ...checkBrowser(userAgent),
         ...checkMobile(userAgent),
-        ...checkOs(userAgent),
+        ...checkOs(userAgent)
     };
 }
 
 function checkBrowser(userAgent: string): BrowserDetectInfo {
-    // * Referenced DamonOehlman/detect-browser
     return browsers
-        .filter((element: BrowserDefinition) => {
-            return (element[1] as RegExp).test(userAgent);
-        })
-        .map((element: BrowserDefinition) => {
-            const match: RegExpExecArray = (element[1] as RegExp).exec (userAgent);
-            const version: string[] = match && match[1].split(/[._]/).slice(0, 3);
-            const versionTails: string = Array.prototype.slice.call(version, 1).join('') || '0';
+        .filter(definition => (<RegExp>definition[1]).test(userAgent))
+        .map(definition => {
+            const match = (<RegExp>definition[1]).exec(userAgent);
+            const version = match && match[1].split(/[._]/).slice(0, 3);
+            const versionTails = Array.prototype.slice.call(version, 1).join('') || '0';
 
-            if (version && version.length < 3) {
-                Array.prototype.push.apply(version, (version.length === 1) ? [0, 0] : [0]);
-            }
+            if (version && version.length < 3)
+                Array.prototype.push.apply(version, version.length === 1 ? [0, 0] : [0]);
 
             return {
-                name: element[0] as string,
+                name: String(definition[0]),
                 version: version.join('.'),
-                versionNumber: parseFloat(version[0] + '.' + versionTails),
+                versionNumber: Number(`${version[0]}.${versionTails}`)
             };
         })
         .shift();
 }
 
 function checkMobile(userAgent: string): BrowserDetectInfo {
-    // * Referenced Mktg-Dept/detectmobilebrowsers
     /* tslint:disable:align */
     return {
         mobile: (
@@ -91,7 +73,7 @@ function checkMobile(userAgent: string): BrowserDetectInfo {
                 '\\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\\.(browser|link)|vodafone|' +
                 'wap|windows ce|xda|xiino',
                 'i')
-                    .test(userAgent) ||
+                .test(userAgent) ||
             new RegExp(
                 '1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\\-)|' +
                 'ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\\-m|r |s )|' +
@@ -113,55 +95,51 @@ function checkMobile(userAgent: string): BrowserDetectInfo {
                 'utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|' +
                 'w3c(\\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\\-|your|zeto|zte\\-'
                 , 'i')
-                    .test(userAgent.substr(0, 4))
-        ),
+                .test(userAgent.substr(0, 4))
+        )
     };
     /* tslint:enable:align */
 }
 
 function checkOs(userAgent: string): BrowserDetectInfo {
-    // * Referenced bestiejs/platform.js
     return os
-        .map((element: OsDefinition) => {
-            const name: string = (element as OsDefinitionImpl).name || element as string;
-            const pattern: string = (
-                (
-                    typeof element === 'string'
-                        ? element as string
-                        : null
-                ) ||
-                (element as OsDefinitionImpl).pattern ||
-                name
-            );
+        .map(definition => {
+            const name = (<OsDefinitionInterface>definition).name || <string>definition;
+            const pattern = (
+                typeof definition === 'string'
+                    ? <string>definition
+                    : undefined
+            ) ||
+            (<OsDefinitionInterface>definition).pattern ||
+            name;
+
             return {
                 name,
                 pattern,
-                value: RegExp(`\\b${
-                    pattern.replace(/([ -])(?!$)/g, '$1?')
-                }(?:x?[\\d._]+|[ \\w.]*)`,
-                              'i').exec(userAgent),
-            } as OsDefinitionImpl;
+                value: RegExp(
+                    `\\b${
+                        pattern.replace(/([ -])(?!$)/g, '$1?')
+                    }(?:x?[\\d._]+|[ \\w.]*)`,
+                    'i'
+                ).exec(userAgent)
+            };
         })
-        .filter((element: OsDefinitionImpl) => {
-            return element.value;
-        })
-        .map((element: OsDefinitionImpl) => {
-            let os: string = element.value[0] || '';
+        .filter(definition => definition.value)
+        .map(definition => {
+            let os = definition.value[0] || '';
             let osSuffix: string;
 
             if (
-                element.pattern &&
-                element.name &&
+                definition.pattern &&
+                definition.name &&
                 /^Win/i.test(os) &&
                 !/^Windows Phone /i.test(os) &&
                 (osSuffix = osVersions[os.replace(/[^\d.]/g, '')])
-            ) {
+            )
                 os = `Windows ${osSuffix}`;
-            }
 
-            if (element.pattern && element.name) {
-                os = os.replace(RegExp(element.pattern, 'i'), element.name);
-            }
+            if (definition.pattern && definition.name)
+                os = os.replace(RegExp(definition.pattern, 'i'), definition.name);
 
             os = os
                 .replace(/ ce$/i, ' CE')
@@ -178,13 +156,12 @@ function checkOs(userAgent: string): BrowserDetectInfo {
                 .replace(/\b(Chrome OS \w+) [\d.]+\b/, '$1')
                 .split(' on ')[0]
                 .trim();
+
             os = /^(?:webOS|i(?:OS|P))/.test(os)
                 ? os
                 : (os.charAt(0).toUpperCase() + os.slice(1));
 
-            return {
-                os,
-            };
+            return { os };
         })
         .shift();
 }

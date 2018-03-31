@@ -3,4 +3,7 @@ plugins:
     enabled: true
     config: tslint.json
 exclude_patterns:
-- "**/*.spec.ts"
+- src/**/*.spec.ts
+- dist/**/*
+- demo/**/*
+- docs/**/*

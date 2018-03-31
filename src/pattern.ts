@@ -14,7 +14,7 @@ export const browsers: BrowserDefinition[] = [
     ['android', /Android\s([0-9\.]+)/],
     ['ios', /Version\/([0-9\._]+).*Mobile.*Safari.*/],
     ['yandexbrowser', /YaBrowser\/([0-9\._]+)/],
-    ['crios', /CriOS\/([0-9\.]+)(:?\s|$)/],
+    ['crios', /CriOS\/([0-9\.]+)(:?\s|$)/]
 ];
 
 export const os: OsDefinition[] = [
@@ -46,7 +46,7 @@ export const os: OsDefinition[] = [
     'Macintosh',
     'Mac',
     'Windows 98;',
-    'Windows ',
+    'Windows '
 ];
 
 export const osVersions: OsVersionMapDefinition = {
@@ -61,5 +61,5 @@ export const osVersions: OsVersionMapDefinition = {
     '5.01': '2000 SP1',
     '5.0': '2000',
     '4.0': 'NT',
-    '4.90': 'ME',
+    '4.90': 'ME'
 };
