@@ -32,7 +32,8 @@
       "coverage",
       "docs/",
       "dist/",
-      "demo/"
+      "demo/",
+      "examples/"
     ],
     "reporter": [
       "lcov",

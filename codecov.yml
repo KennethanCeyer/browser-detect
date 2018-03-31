@@ -5,3 +5,4 @@ ignore:
   - "src"**/*.spec.ts"
   - "src"**/*.d.ts"
   - "docs/**/*"
+  - "examples/**/*"
