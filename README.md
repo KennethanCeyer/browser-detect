@@ -7,6 +7,7 @@
 [![npm](https://img.shields.io/npm/dm/browser-detect.svg)](https://www.npmjs.com/package/browser-detect)
 [![Join the chat at https://gitter.im/KennethanCeyer/PIGNOSE](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/KennethanCeyer/PIGNOSE?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FKennethanCeyer%2Fbrowser-detect.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FKennethanCeyer%2Fbrowser-detect?ref=badge_shield)
 
 [![Build Status](https://travis-ci.org/KennethanCeyer/browser-detect.svg?branch=master)](https://travis-ci.org/KennethanCeyer/browser-detect)
 [![Coverage Status](https://coveralls.io/repos/github/KennethanCeyer/browser-detect/badge.svg?branch=master)](https://coveralls.io/github/KennethanCeyer/browser-detect?branch=master)
@@ -290,3 +291,6 @@ $ npm run lint
 `browser-detect` is under MIT license
 
 of cource, You can use it, modify it and contribute it :trollface:
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FKennethanCeyer%2Fbrowser-detect.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FKennethanCeyer%2Fbrowser-detect?ref=badge_large)
