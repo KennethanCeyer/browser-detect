@@ -20,4 +20,10 @@ describe('test method: browser()', () => {
         expect(result.version).to.equal('1.0.0');
         expect(result.versionNumber).to.equal(1);
     });
+
+    it('should throw an error with empty agent, navigator, process', () => {
+        const detector = new Detector(undefined, undefined, undefined);
+        expect(() => detector.detect())
+            .to.throw('Please give user-agent.\n> browser(navigator.userAgent or res.headers[\'user-agent\']).');
+    });
 });
