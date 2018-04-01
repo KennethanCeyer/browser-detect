@@ -1,4 +1,4 @@
-<p align="center" style="margin-bottom: 2em;"><img width="280px" src="./logo.svg"></p>
+<p align="center" style="margin-bottom: 2em;"><img width="280px" src="https://www.pigno.se/static/assets/images/browser-detect-logo.svg"></p>
 
 <p align="center"><a href="https://nodei.co/npm/browser-detect/"><img src="https://nodei.co/npm/browser-detect.png" alt="NPM"></a></p>
 
