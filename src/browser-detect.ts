@@ -9,6 +9,6 @@ const navigator = typeof window !== 'undefined'
     : undefined;
 
 export default function (userAgent: string): BrowserDetectInfo {
-    const detector = new Detector(userAgent);
+    const detector = new Detector(userAgent, navigator, process);
     return detector.detect();
 }
