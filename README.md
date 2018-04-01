@@ -1,6 +1,6 @@
 <p align="center" style="margin-bottom: 2em;"><img width="280px" src="./logo.svg"></p>
 
-<p align="center"><a href="https://nodei.co/npm/metric-parser/"><img src="https://nodei.co/npm/metric-parser.png" alt="NPM"></a></p>
+<p align="center"><a href="https://nodei.co/npm/browser-detect/"><img src="https://nodei.co/npm/browser-detect.png" alt="NPM"></a></p>
 
 <p align="center">
     <a href="https://badge.fury.io/js/browser-detect"><img src="https://badge.fury.io/js/browser-detect.svg" alt="npm version"></a>
