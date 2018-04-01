@@ -1,19 +1,24 @@
 import { BrowserDetectInfo, OsDefinition, OsDefinitionInterface } from './browser-detect.interface';
 import { browsers, os, osVersions } from './definitions';
 import { mobilePrefixRegExp, mobileRegExp } from './regexp';
+import Process = NodeJS.Process;
 
 export class Detector {
     private userAgent: string;
 
-    public constructor(userAgent: string) {
+    public constructor(
+        userAgent: string,
+        private navigator?: Navigator,
+        private process?: Process
+    ) {
         this.userAgent = userAgent
             ? userAgent
-            : navigator ? (navigator.userAgent || navigator.vendor) : '';
+            : this.navigator ? (navigator.userAgent || navigator.vendor) : '';
     }
 
     public detect(): BrowserDetectInfo {
-        if (typeof process !== 'undefined' && !this.userAgent) {
-            const version = process.version.slice(1) .split('.').slice(0, 3);
+        if (this.process && !this.userAgent) {
+            const version = this.process.version.slice(1) .split('.').slice(0, 3);
             const versionTail = Array.prototype.slice.call(version, 1).join('') || '0';
 
             return {
@@ -21,7 +26,7 @@ export class Detector {
                 version: version.join('.'),
                 versionNumber: parseFloat(`${version[0]}.${versionTail}`),
                 mobile: false,
-                os: process.platform
+                os: this.process.platform
             };
         }
 
