@@ -12,7 +12,7 @@ const injectableProcess = typeof process !== 'undefined'
     ? process
     : undefined;
 
-export default function (userAgent: string): BrowserDetectInfo {
+export default function (userAgent?: string): BrowserDetectInfo {
     const detector = new Detector(userAgent, injectableNavigator, injectableProcess);
     return detector.detect();
 }
