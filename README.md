@@ -189,7 +189,6 @@ $ node ./examples/server.js
 
 ## :zap: Type
 
-
 | name | type | description | example |
 | ---- | ---- | ----------- | ------- |
 | name | string | a browser name | ie, chrome, firefox |
@@ -253,9 +252,8 @@ $ npm run test
 
 ## :yellow_heart: Contributors
 
-- [![vlewin](https://avatars3.githubusercontent.com/u/611466?s=30&v=4) **vlewin**](https://github.com/vlewin)
-  - fix pattern issue [#2](https://github.com/KennethanCeyer/browser-detect/issues/2)
-  - add unit test with mocha + chai
+- [**yarkeev**](https://github.com/yarkeev)
+- [**vlewin**](https://github.com/vlewin)
 
 ## :mag_right: License
 
