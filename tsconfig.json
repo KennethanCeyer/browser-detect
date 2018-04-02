@@ -25,7 +25,10 @@
         "typeRoots": [ "node_modules/@types" ]
     },
     "outDir": "./dist",
-    "files": [
-        "src/browser-detect.ts"
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "**/*.spec.ts"
     ]
 }

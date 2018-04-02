@@ -1,6 +1,6 @@
 {
   "name": "browser-detect",
-  "version": "0.2.25",
+  "version": "0.2.26",
   "description": "Simplify detecting your browser",
   "main": "dist/browser-detect.umd.js",
   "module": "dist/browser-detect.es5.js",
