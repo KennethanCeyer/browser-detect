@@ -26,6 +26,7 @@
     },
     "outDir": "./dist",
     "files": [
-        "src/browser-detect.ts"
+        "src/browser-detect.ts",
+        "src/browser-detect.interface.ts"
     ]
 }
