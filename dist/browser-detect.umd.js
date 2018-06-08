@@ -90,7 +90,7 @@
     };
 
     var mobileRegExp = new RegExp(['(android|bb\\d+|meego).+mobile|avantgo|bada\\/|blackberry|blazer|',
-        'compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|',
+        'compal|elaine|fennec|hiptop|iemobile|ip(hone|od|ad)|iris|kindle|lge |maemo|',
         'midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)',
         '\\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\\.(browser|link)|vodafone|',
         'wap|windows ce|xda|xiino'].join(''), 'i');
@@ -235,43 +235,20 @@
     if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
     });
 
-    var _global$1 = /*#__PURE__*/Object.freeze({
-        default: _global,
-        __moduleExports: _global
-    });
-
     var _core = createCommonjsModule(function (module) {
-    var core = module.exports = { version: '2.5.4' };
+    var core = module.exports = { version: '2.5.7' };
     if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
     });
     var _core_1 = _core.version;
-
-    var _core$1 = /*#__PURE__*/Object.freeze({
-        default: _core,
-        __moduleExports: _core,
-        version: _core_1
-    });
 
     var _isObject = function (it) {
       return typeof it === 'object' ? it !== null : typeof it === 'function';
     };
 
-    var _isObject$1 = /*#__PURE__*/Object.freeze({
-        default: _isObject,
-        __moduleExports: _isObject
-    });
-
-    var isObject = ( _isObject$1 && _isObject ) || _isObject$1;
-
     var _anObject = function (it) {
-      if (!isObject(it)) throw TypeError(it + ' is not an object!');
+      if (!_isObject(it)) throw TypeError(it + ' is not an object!');
       return it;
     };
-
-    var _anObject$1 = /*#__PURE__*/Object.freeze({
-        default: _anObject,
-        __moduleExports: _anObject
-    });
 
     var _fails = function (exec) {
       try {
@@ -281,48 +258,20 @@
       }
     };
 
-    var _fails$1 = /*#__PURE__*/Object.freeze({
-        default: _fails,
-        __moduleExports: _fails
-    });
-
-    var require$$1 = ( _fails$1 && _fails ) || _fails$1;
-
     // Thank's IE8 for his funny defineProperty
-    var _descriptors = !require$$1(function () {
+    var _descriptors = !_fails(function () {
       return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
     });
 
-    var _descriptors$1 = /*#__PURE__*/Object.freeze({
-        default: _descriptors,
-        __moduleExports: _descriptors
-    });
-
-    var global$1 = ( _global$1 && _global ) || _global$1;
-
-    var document = global$1.document;
+    var document = _global.document;
     // typeof document.createElement is 'object' in old IE
-    var is = isObject(document) && isObject(document.createElement);
+    var is = _isObject(document) && _isObject(document.createElement);
     var _domCreate = function (it) {
       return is ? document.createElement(it) : {};
     };
 
-    var _domCreate$1 = /*#__PURE__*/Object.freeze({
-        default: _domCreate,
-        __moduleExports: _domCreate
-    });
-
-    var require$$0 = ( _descriptors$1 && _descriptors ) || _descriptors$1;
-
-    var require$$2 = ( _domCreate$1 && _domCreate ) || _domCreate$1;
-
-    var _ie8DomDefine = !require$$0 && !require$$1(function () {
-      return Object.defineProperty(require$$2('div'), 'a', { get: function () { return 7; } }).a != 7;
-    });
-
-    var _ie8DomDefine$1 = /*#__PURE__*/Object.freeze({
-        default: _ie8DomDefine,
-        __moduleExports: _ie8DomDefine
+    var _ie8DomDefine = !_descriptors && !_fails(function () {
+      return Object.defineProperty(_domCreate('div'), 'a', { get: function () { return 7; } }).a != 7;
     });
 
     // 7.1.1 ToPrimitive(input [, PreferredType])
@@ -330,32 +279,21 @@
     // instead of the ES6 spec version, we didn't implement @@toPrimitive case
     // and the second argument - flag - preferred type is a string
     var _toPrimitive = function (it, S) {
-      if (!isObject(it)) return it;
+      if (!_isObject(it)) return it;
       var fn, val;
-      if (S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
-      if (typeof (fn = it.valueOf) == 'function' && !isObject(val = fn.call(it))) return val;
-      if (!S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
+      if (S && typeof (fn = it.toString) == 'function' && !_isObject(val = fn.call(it))) return val;
+      if (typeof (fn = it.valueOf) == 'function' && !_isObject(val = fn.call(it))) return val;
+      if (!S && typeof (fn = it.toString) == 'function' && !_isObject(val = fn.call(it))) return val;
       throw TypeError("Can't convert object to primitive value");
     };
 
-    var _toPrimitive$1 = /*#__PURE__*/Object.freeze({
-        default: _toPrimitive,
-        __moduleExports: _toPrimitive
-    });
-
-    var anObject = ( _anObject$1 && _anObject ) || _anObject$1;
-
-    var IE8_DOM_DEFINE = ( _ie8DomDefine$1 && _ie8DomDefine ) || _ie8DomDefine$1;
-
-    var toPrimitive = ( _toPrimitive$1 && _toPrimitive ) || _toPrimitive$1;
-
     var dP = Object.defineProperty;
 
-    var f = require$$0 ? Object.defineProperty : function defineProperty(O, P, Attributes) {
-      anObject(O);
-      P = toPrimitive(P, true);
-      anObject(Attributes);
-      if (IE8_DOM_DEFINE) try {
+    var f = _descriptors ? Object.defineProperty : function defineProperty(O, P, Attributes) {
+      _anObject(O);
+      P = _toPrimitive(P, true);
+      _anObject(Attributes);
+      if (_ie8DomDefine) try {
         return dP(O, P, Attributes);
       } catch (e) { /* empty */ }
       if ('get' in Attributes || 'set' in Attributes) throw TypeError('Accessors not supported!');
@@ -367,12 +305,6 @@
     	f: f
     };
 
-    var _objectDp$1 = /*#__PURE__*/Object.freeze({
-        default: _objectDp,
-        __moduleExports: _objectDp,
-        f: f
-    });
-
     var _propertyDesc = function (bitmap, value) {
       return {
         enumerable: !(bitmap & 1),
@@ -382,36 +314,17 @@
       };
     };
 
-    var _propertyDesc$1 = /*#__PURE__*/Object.freeze({
-        default: _propertyDesc,
-        __moduleExports: _propertyDesc
-    });
-
-    var dP$1 = ( _objectDp$1 && _objectDp ) || _objectDp$1;
-
-    var createDesc = ( _propertyDesc$1 && _propertyDesc ) || _propertyDesc$1;
-
-    var _hide = require$$0 ? function (object, key, value) {
-      return dP$1.f(object, key, createDesc(1, value));
+    var _hide = _descriptors ? function (object, key, value) {
+      return _objectDp.f(object, key, _propertyDesc(1, value));
     } : function (object, key, value) {
       object[key] = value;
       return object;
     };
 
-    var _hide$1 = /*#__PURE__*/Object.freeze({
-        default: _hide,
-        __moduleExports: _hide
-    });
-
     var hasOwnProperty = {}.hasOwnProperty;
     var _has = function (it, key) {
       return hasOwnProperty.call(it, key);
     };
-
-    var _has$1 = /*#__PURE__*/Object.freeze({
-        default: _has,
-        __moduleExports: _has
-    });
 
     var id = 0;
     var px = Math.random();
@@ -419,43 +332,30 @@
       return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
     };
 
-    var _uid$1 = /*#__PURE__*/Object.freeze({
-        default: _uid,
-        __moduleExports: _uid
-    });
-
-    var hide = ( _hide$1 && _hide ) || _hide$1;
-
-    var has = ( _has$1 && _has ) || _has$1;
-
-    var uid = ( _uid$1 && _uid ) || _uid$1;
-
-    var require$$1$1 = ( _core$1 && _core ) || _core$1;
-
     var _redefine = createCommonjsModule(function (module) {
-    var SRC = uid('src');
+    var SRC = _uid('src');
     var TO_STRING = 'toString';
     var $toString = Function[TO_STRING];
     var TPL = ('' + $toString).split(TO_STRING);
 
-    require$$1$1.inspectSource = function (it) {
+    _core.inspectSource = function (it) {
       return $toString.call(it);
     };
 
     (module.exports = function (O, key, val, safe) {
       var isFunction = typeof val == 'function';
-      if (isFunction) has(val, 'name') || hide(val, 'name', key);
+      if (isFunction) _has(val, 'name') || _hide(val, 'name', key);
       if (O[key] === val) return;
-      if (isFunction) has(val, SRC) || hide(val, SRC, O[key] ? '' + O[key] : TPL.join(String(key)));
-      if (O === global$1) {
+      if (isFunction) _has(val, SRC) || _hide(val, SRC, O[key] ? '' + O[key] : TPL.join(String(key)));
+      if (O === _global) {
         O[key] = val;
       } else if (!safe) {
         delete O[key];
-        hide(O, key, val);
+        _hide(O, key, val);
       } else if (O[key]) {
         O[key] = val;
       } else {
-        hide(O, key, val);
+        _hide(O, key, val);
       }
     // add fake Function#toString for correct work wrapped methods / constructors with methods like LoDash isNative
     })(Function.prototype, TO_STRING, function toString() {
@@ -463,27 +363,15 @@
     });
     });
 
-    var _redefine$1 = /*#__PURE__*/Object.freeze({
-        default: _redefine,
-        __moduleExports: _redefine
-    });
-
     var _aFunction = function (it) {
       if (typeof it != 'function') throw TypeError(it + ' is not a function!');
       return it;
     };
 
-    var _aFunction$1 = /*#__PURE__*/Object.freeze({
-        default: _aFunction,
-        __moduleExports: _aFunction
-    });
-
-    var aFunction = ( _aFunction$1 && _aFunction ) || _aFunction$1;
-
     // optional / simple context binding
 
     var _ctx = function (fn, that, length) {
-      aFunction(fn);
+      _aFunction(fn);
       if (that === undefined) return fn;
       switch (length) {
         case 1: return function (a) {
@@ -501,15 +389,6 @@
       };
     };
 
-    var _ctx$1 = /*#__PURE__*/Object.freeze({
-        default: _ctx,
-        __moduleExports: _ctx
-    });
-
-    var redefine = ( _redefine$1 && _redefine ) || _redefine$1;
-
-    var ctx = ( _ctx$1 && _ctx ) || _ctx$1;
-
     var PROTOTYPE = 'prototype';
 
     var $export = function (type, name, source) {
@@ -518,8 +397,8 @@
       var IS_STATIC = type & $export.S;
       var IS_PROTO = type & $export.P;
       var IS_BIND = type & $export.B;
-      var target = IS_GLOBAL ? global$1 : IS_STATIC ? global$1[name] || (global$1[name] = {}) : (global$1[name] || {})[PROTOTYPE];
-      var exports = IS_GLOBAL ? require$$1$1 : require$$1$1[name] || (require$$1$1[name] = {});
+      var target = IS_GLOBAL ? _global : IS_STATIC ? _global[name] || (_global[name] = {}) : (_global[name] || {})[PROTOTYPE];
+      var exports = IS_GLOBAL ? _core : _core[name] || (_core[name] = {});
       var expProto = exports[PROTOTYPE] || (exports[PROTOTYPE] = {});
       var key, own, out, exp;
       if (IS_GLOBAL) source = name;
@@ -529,15 +408,15 @@
         // export native or passed
         out = (own ? target : source)[key];
         // bind timers to global for call from export context
-        exp = IS_BIND && own ? ctx(out, global$1) : IS_PROTO && typeof out == 'function' ? ctx(Function.call, out) : out;
+        exp = IS_BIND && own ? _ctx(out, _global) : IS_PROTO && typeof out == 'function' ? _ctx(Function.call, out) : out;
         // extend global
-        if (target) redefine(target, key, out, type & $export.U);
+        if (target) _redefine(target, key, out, type & $export.U);
         // export
-        if (exports[key] != out) hide(exports, key, exp);
+        if (exports[key] != out) _hide(exports, key, exp);
         if (IS_PROTO && expProto[key] != out) expProto[key] = out;
       }
     };
-    global$1.core = require$$1$1;
+    _global.core = _core;
     // type bitmap
     $export.F = 1;   // forced
     $export.G = 2;   // global
@@ -549,35 +428,18 @@
     $export.R = 128; // real proto method for `library`
     var _export = $export;
 
-    var _export$1 = /*#__PURE__*/Object.freeze({
-        default: _export,
-        __moduleExports: _export
-    });
-
     var toString = {}.toString;
 
     var _cof = function (it) {
       return toString.call(it).slice(8, -1);
     };
 
-    var _cof$1 = /*#__PURE__*/Object.freeze({
-        default: _cof,
-        __moduleExports: _cof
-    });
-
-    var cof = ( _cof$1 && _cof ) || _cof$1;
-
     // fallback for non-array-like ES3 and non-enumerable old V8 strings
 
     // eslint-disable-next-line no-prototype-builtins
     var _iobject = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
-      return cof(it) == 'String' ? it.split('') : Object(it);
+      return _cof(it) == 'String' ? it.split('') : Object(it);
     };
-
-    var _iobject$1 = /*#__PURE__*/Object.freeze({
-        default: _iobject,
-        __moduleExports: _iobject
-    });
 
     // 7.2.1 RequireObjectCoercible(argument)
     var _defined = function (it) {
@@ -585,23 +447,11 @@
       return it;
     };
 
-    var _defined$1 = /*#__PURE__*/Object.freeze({
-        default: _defined,
-        __moduleExports: _defined
-    });
-
-    var defined = ( _defined$1 && _defined ) || _defined$1;
-
     // 7.1.13 ToObject(argument)
 
     var _toObject = function (it) {
-      return Object(defined(it));
+      return Object(_defined(it));
     };
-
-    var _toObject$1 = /*#__PURE__*/Object.freeze({
-        default: _toObject,
-        __moduleExports: _toObject
-    });
 
     // 7.1.4 ToInteger
     var ceil = Math.ceil;
@@ -610,113 +460,67 @@
       return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
     };
 
-    var _toInteger$1 = /*#__PURE__*/Object.freeze({
-        default: _toInteger,
-        __moduleExports: _toInteger
-    });
-
-    var toInteger = ( _toInteger$1 && _toInteger ) || _toInteger$1;
-
     // 7.1.15 ToLength
 
     var min = Math.min;
     var _toLength = function (it) {
-      return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
+      return it > 0 ? min(_toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
     };
-
-    var _toLength$1 = /*#__PURE__*/Object.freeze({
-        default: _toLength,
-        __moduleExports: _toLength
-    });
 
     // 7.2.2 IsArray(argument)
 
     var _isArray = Array.isArray || function isArray(arg) {
-      return cof(arg) == 'Array';
+      return _cof(arg) == 'Array';
     };
 
-    var _isArray$1 = /*#__PURE__*/Object.freeze({
-        default: _isArray,
-        __moduleExports: _isArray
-    });
-
+    var _shared = createCommonjsModule(function (module) {
     var SHARED = '__core-js_shared__';
-    var store = global$1[SHARED] || (global$1[SHARED] = {});
-    var _shared = function (key) {
-      return store[key] || (store[key] = {});
-    };
+    var store = _global[SHARED] || (_global[SHARED] = {});
 
-    var _shared$1 = /*#__PURE__*/Object.freeze({
-        default: _shared,
-        __moduleExports: _shared
+    (module.exports = function (key, value) {
+      return store[key] || (store[key] = value !== undefined ? value : {});
+    })('versions', []).push({
+      version: _core.version,
+      mode: 'global',
+      copyright: '© 2018 Denis Pushkarev (zloirock.ru)'
     });
-
-    var require$$0$1 = ( _shared$1 && _shared ) || _shared$1;
+    });
 
     var _wks = createCommonjsModule(function (module) {
-    var store = require$$0$1('wks');
+    var store = _shared('wks');
 
-    var Symbol = global$1.Symbol;
+    var Symbol = _global.Symbol;
     var USE_SYMBOL = typeof Symbol == 'function';
 
     var $exports = module.exports = function (name) {
       return store[name] || (store[name] =
-        USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : uid)('Symbol.' + name));
+        USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : _uid)('Symbol.' + name));
     };
 
     $exports.store = store;
     });
 
-    var _wks$1 = /*#__PURE__*/Object.freeze({
-        default: _wks,
-        __moduleExports: _wks
-    });
-
-    var isArray = ( _isArray$1 && _isArray ) || _isArray$1;
-
-    var require$$0$2 = ( _wks$1 && _wks ) || _wks$1;
-
-    var SPECIES = require$$0$2('species');
+    var SPECIES = _wks('species');
 
     var _arraySpeciesConstructor = function (original) {
       var C;
-      if (isArray(original)) {
+      if (_isArray(original)) {
         C = original.constructor;
         // cross-realm fallback
-        if (typeof C == 'function' && (C === Array || isArray(C.prototype))) C = undefined;
-        if (isObject(C)) {
+        if (typeof C == 'function' && (C === Array || _isArray(C.prototype))) C = undefined;
+        if (_isObject(C)) {
           C = C[SPECIES];
           if (C === null) C = undefined;
         }
       } return C === undefined ? Array : C;
     };
 
-    var _arraySpeciesConstructor$1 = /*#__PURE__*/Object.freeze({
-        default: _arraySpeciesConstructor,
-        __moduleExports: _arraySpeciesConstructor
-    });
-
-    var speciesConstructor = ( _arraySpeciesConstructor$1 && _arraySpeciesConstructor ) || _arraySpeciesConstructor$1;
-
     // 9.4.2.3 ArraySpeciesCreate(originalArray, length)
 
 
     var _arraySpeciesCreate = function (original, length) {
-      return new (speciesConstructor(original))(length);
+      return new (_arraySpeciesConstructor(original))(length);
     };
-
-    var _arraySpeciesCreate$1 = /*#__PURE__*/Object.freeze({
-        default: _arraySpeciesCreate,
-        __moduleExports: _arraySpeciesCreate
-    });
-
-    var IObject = ( _iobject$1 && _iobject ) || _iobject$1;
-
-    var toObject = ( _toObject$1 && _toObject ) || _toObject$1;
-
-    var toLength = ( _toLength$1 && _toLength ) || _toLength$1;
-
-    var asc = ( _arraySpeciesCreate$1 && _arraySpeciesCreate ) || _arraySpeciesCreate$1;
 
     // 0 -> Array#forEach
     // 1 -> Array#map
@@ -737,12 +541,12 @@
       var IS_EVERY = TYPE == 4;
       var IS_FIND_INDEX = TYPE == 6;
       var NO_HOLES = TYPE == 5 || IS_FIND_INDEX;
-      var create = $create || asc;
+      var create = $create || _arraySpeciesCreate;
       return function ($this, callbackfn, that) {
-        var O = toObject($this);
-        var self = IObject(O);
-        var f = ctx(callbackfn, that, 3);
-        var length = toLength(self.length);
+        var O = _toObject($this);
+        var self = _iobject(O);
+        var f = _ctx(callbackfn, that, 3);
+        var length = _toLength(self.length);
         var index = 0;
         var result = IS_MAP ? create($this, length) : IS_FILTER ? create($this, 0) : undefined;
         var val, res;
@@ -763,81 +567,58 @@
       };
     };
 
-    var _arrayMethods$1 = /*#__PURE__*/Object.freeze({
-        default: _arrayMethods,
-        __moduleExports: _arrayMethods
-    });
-
     var _strictMethod = function (method, arg) {
-      return !!method && require$$1(function () {
+      return !!method && _fails(function () {
         // eslint-disable-next-line no-useless-call
         arg ? method.call(null, function () { /* empty */ }, 1) : method.call(null);
       });
     };
 
-    var _strictMethod$1 = /*#__PURE__*/Object.freeze({
-        default: _strictMethod,
-        __moduleExports: _strictMethod
-    });
+    var $filter = _arrayMethods(2);
 
-    var $export$1 = ( _export$1 && _export ) || _export$1;
-
-    var require$$0$3 = ( _arrayMethods$1 && _arrayMethods ) || _arrayMethods$1;
-
-    var require$$1$2 = ( _strictMethod$1 && _strictMethod ) || _strictMethod$1;
-
-    var $filter = require$$0$3(2);
-
-    $export$1($export$1.P + $export$1.F * !require$$1$2([].filter, true), 'Array', {
+    _export(_export.P + _export.F * !_strictMethod([].filter, true), 'Array', {
       // 22.1.3.7 / 15.4.4.20 Array.prototype.filter(callbackfn [, thisArg])
       filter: function filter(callbackfn /* , thisArg */) {
         return $filter(this, callbackfn, arguments[1]);
       }
     });
 
-    var filter = require$$1$1.Array.filter;
+    var filter = _core.Array.filter;
 
-    var $map = require$$0$3(1);
+    var $map = _arrayMethods(1);
 
-    $export$1($export$1.P + $export$1.F * !require$$1$2([].map, true), 'Array', {
+    _export(_export.P + _export.F * !_strictMethod([].map, true), 'Array', {
       // 22.1.3.15 / 15.4.4.19 Array.prototype.map(callbackfn [, thisArg])
       map: function map(callbackfn /* , thisArg */) {
         return $map(this, callbackfn, arguments[1]);
       }
     });
 
-    var map = require$$1$1.Array.map;
+    var map = _core.Array.map;
 
     var _stringWs = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003' +
       '\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
 
-    var _stringWs$1 = /*#__PURE__*/Object.freeze({
-        default: _stringWs,
-        __moduleExports: _stringWs
-    });
-
-    var spaces = ( _stringWs$1 && _stringWs ) || _stringWs$1;
-
-    var space = '[' + spaces + ']';
+    var space = '[' + _stringWs + ']';
     var non = '\u200b\u0085';
     var ltrim = RegExp('^' + space + space + '*');
     var rtrim = RegExp(space + space + '*$');
 
     var exporter = function (KEY, exec, ALIAS) {
       var exp = {};
-      var FORCE = require$$1(function () {
-        return !!spaces[KEY]() || non[KEY]() != non;
+      var FORCE = _fails(function () {
+        return !!_stringWs[KEY]() || non[KEY]() != non;
       });
-      var fn = exp[KEY] = FORCE ? exec(trim) : spaces[KEY];
+      var fn = exp[KEY] = FORCE ? exec(trim) : _stringWs[KEY];
       if (ALIAS) exp[ALIAS] = fn;
-      $export$1($export$1.P + $export$1.F * FORCE, 'String', exp);
+      _export(_export.P + _export.F * FORCE, 'String', exp);
     };
 
     // 1 -> String#trimLeft
     // 2 -> String#trimRight
     // 3 -> String#trim
     var trim = exporter.trim = function (string, TYPE) {
-      string = String(defined(string));
+      string = String(_defined(string));
       if (TYPE & 1) string = string.replace(ltrim, '');
       if (TYPE & 2) string = string.replace(rtrim, '');
       return string;
@@ -845,21 +626,14 @@
 
     var _stringTrim = exporter;
 
-    var _stringTrim$1 = /*#__PURE__*/Object.freeze({
-        default: _stringTrim,
-        __moduleExports: _stringTrim
-    });
-
-    var require$$0$4 = ( _stringTrim$1 && _stringTrim ) || _stringTrim$1;
-
     // 21.1.3.25 String.prototype.trim()
-    require$$0$4('trim', function ($trim) {
+    _stringTrim('trim', function ($trim) {
       return function trim() {
         return $trim(this, 3);
       };
     });
 
-    var trim$1 = require$$1$1.String.trim;
+    var trim$1 = _core.String.trim;
 
     var injectableNavigator = typeof window !== 'undefined'
         ? window.navigator
