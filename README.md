@@ -194,7 +194,7 @@ $ node ./examples/server.js
 | name | string | a browser name | ie, chrome, firefox |
 | version | string | browser or node version | 59.2.22 |
 | versionNumber | number | browser or node number casted to number | 59.222 |
-| mobile | boolean | if browser is in mobile environment, it will be true | ture |
+| mobile | boolean | if browser is in mobile environment, it will be true | true |
 | os | string | os type name | Windows NT 10.0 |
 
 ## :triangular_flag_on_post: Roadmap
