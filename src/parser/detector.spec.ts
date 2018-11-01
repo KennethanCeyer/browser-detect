@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { Detector } from './detector';
+import { Detector } from '../detector';
 import * as _ from 'lodash';
 import Process = NodeJS.Process;
 

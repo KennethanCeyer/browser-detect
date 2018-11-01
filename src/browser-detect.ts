@@ -1,4 +1,4 @@
-import { BrowserDetectInfo } from './browser-detect.interface';
+import { BrowserDetect } from './browser-detect.interface';
 import { Detector } from './detector';
 import 'core-js/fn/array/filter';
 import 'core-js/fn/array/map';
@@ -12,7 +12,7 @@ const injectableProcess = typeof process !== 'undefined'
     ? process
     : undefined;
 
-export default function (userAgent?: string): BrowserDetectInfo {
+export default function (userAgent?: string): BrowserDetect {
     const detector = new Detector(userAgent, injectableNavigator, injectableProcess);
     return detector.detect();
 }
