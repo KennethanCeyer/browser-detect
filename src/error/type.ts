@@ -8,10 +8,6 @@
  * https://github.com/KennethanCeyer/browser-detect
  */
 
-export interface BrowserDetect {
-    name?: string;
-    version?: string;
-    versionNumber?: number;
-    mobile?: boolean;
-    os?: string;
-}
+export const errorType = {
+    MISSING: 'MISSING'
+};
