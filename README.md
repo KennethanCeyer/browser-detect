@@ -171,6 +171,26 @@ View will can access `browser` variable.
 "{ name: 'firefox', version: '53.0.0', versionNumber: 53, mobile: false, os: 'Windows NT 10.0' }"
 ```
 
+## :earth_americas: CDN
+
+You can use it directly from CDN.
+
+**On jsDelivr:**
+
+last version:
+- https://cdn.jsdelivr.net/npm/browser-detect/dist/browser-detect.umd.min.js
+
+or specific version:
+- https://cdn.jsdelivr.net/npm/browser-detect@0.2.28/dist/browser-detect.umd.min.js
+
+**On unpkg:**
+
+last version:
+- https://unpkg.com/browser-detect/dist/browser-detect.umd.js
+
+or specific version:
+- https://unpkg.com/browser-detect@0.2.28/dist/browser-detect.umd.js
+
 ## :page_with_curl: Demo
 
 #### Web
@@ -208,7 +228,7 @@ $ node ./examples/server.js
 - [x] support CI (TravisCI)
 - [x] support unit tests
 - [ ] support e2e tests
-- [ ] suport cdn
+- [x] suport cdn
 
 ## :mag_right: Compatibility
 
