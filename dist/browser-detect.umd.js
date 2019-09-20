@@ -19,16 +19,20 @@
     and limitations under the License.
     ***************************************************************************** */
 
-    var __assign = Object.assign || function __assign(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-        }
-        return t;
+    var __assign = function() {
+        __assign = Object.assign || function __assign(t) {
+            for (var s, i = 1, n = arguments.length; i < n; i++) {
+                s = arguments[i];
+                for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+            }
+            return t;
+        };
+        return __assign.apply(this, arguments);
     };
 
     var browsers = [
         ['firefox', /Firefox\/([0-9\.]+)(?:\s|$)/],
+        ['fxios', /FxiOS\/([0-9\.a-z]+)(?:\s|$)/],
         ['opera', /Opera\/([0-9\.]+)(?:\s|$)/],
         ['opera', /OPR\/([0-9\.]+)(:?\s|$)$/],
         ['edge', /Edge\/([0-9\._]+)/],
@@ -149,10 +153,13 @@
                 var versionTails = Array.prototype.slice.call(version, 1).join('') || '0';
                 if (version && version.length < 3)
                     Array.prototype.push.apply(version, version.length === 1 ? [0, 0] : [0]);
+                // some browsers (e.g. ios firefox) put letters in the version tail.
+                // Filter them out for version number reporting)
+                var cleanedVersionTail = parseFloat(versionTails) ? versionTails : '0';
                 return {
                     name: String(definition[0]),
                     version: version.join('.'),
-                    versionNumber: Number(version[0] + "." + versionTails)
+                    versionNumber: Number(version[0] + "." + cleanedVersionTail)
                 };
             })
                 .shift();
@@ -473,6 +480,8 @@
       return _cof(arg) == 'Array';
     };
 
+    var _library = false;
+
     var _shared = createCommonjsModule(function (module) {
     var SHARED = '__core-js_shared__';
     var store = _global[SHARED] || (_global[SHARED] = {});
@@ -481,7 +490,7 @@
       return store[key] || (store[key] = value !== undefined ? value : {});
     })('versions', []).push({
       version: _core.version,
-      mode: 'global',
+      mode: _library ? 'pure' : 'global',
       copyright: '© 2018 Denis Pushkarev (zloirock.ru)'
     });
     });

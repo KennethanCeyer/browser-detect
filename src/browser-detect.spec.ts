@@ -122,4 +122,16 @@ describe('test method: browser()', () => {
         expect(result.version).to.equal('62.0.3202');
         expect(result.versionNumber).to.equal(62.03202);
     });
+
+    it('should return valid result with agent  Firefox on iOS (Mobile)', () => {
+        const userAgent = 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4_1 like Mac OS X) ' +
+            'AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/19.0b16042 Mobile/15E148 Safari/605.1.15';
+        const result = browser(userAgent);
+
+        expect(result.mobile).to.true;
+        expect(result.name).to.equal('fxios');
+        expect(result.os).to.equal('OS X');
+        expect(result.version).to.equal('19.0b16042.0');
+        expect(result.versionNumber).to.equal(19);
+    });
 });
