@@ -50,11 +50,13 @@ export class Detector {
 
                 if (version && version.length < 3)
                     Array.prototype.push.apply(version, version.length === 1 ? [0, 0] : [0]);
-
+                // some browsers (e.g. ios firefox) put letters in the version tail.
+                // Filter them out for version number reporting)
+                const cleanedVersionTail = parseFloat(versionTails) ? versionTails : '0';
                 return {
                     name: String(definition[0]),
                     version: version.join('.'),
-                    versionNumber: Number(`${version[0]}.${versionTails}`)
+                    versionNumber: Number(`${version[0]}.${cleanedVersionTail}`)
                 };
             })
             .shift();
