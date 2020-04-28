@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { BrowserDetectInfo } from './browser-detect.interface';
 import Process = NodeJS.Process;
 export declare class Detector {
