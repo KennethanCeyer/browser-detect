@@ -7,7 +7,9 @@
   "typings": "dist/types/browser-detect.d.ts",
   "scripts": {
     "lint": "tslint -t codeFrame 'src/**/*.ts'",
-    "build": "tsc --module commonjs && rollup -c rollup.config.ts",
+    "build": "npm run tsc && npm run rollup",
+    "tsc" : "tsc --module commonjs",
+    "rollup": "rollup -c rollup.config.ts",
     "typedoc": "typedoc --out docs --target es6 --theme minimal --mode file src --exclude **/*.spec.ts",
     "test": "nyc mocha"
   },
