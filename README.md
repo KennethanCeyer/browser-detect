@@ -20,8 +20,6 @@
     <a href="https://www.codefactor.io/repository/github/kennethanceyer/browser-detect"><img src="https://www.codefactor.io/repository/github/kennethanceyer/browser-detect/badge" alt="CodeFactor"></a>
     <a href="https://codeclimate.com/github/KennethanCeyer/browser-detect/maintainability"><img src="https://api.codeclimate.com/v1/badges/328163587b12cf5cb3aa/maintainability" alt="Maintainability"></a>
     <a href="https://codeclimate.com/github/KennethanCeyer/browser-detect/test_coverage"><img src="https://api.codeclimate.com/v1/badges/328163587b12cf5cb3aa/test_coverage" alt="Test Coverage"></a>
-    <a href="https://david-dm.org/KennethanCeyer/browser-detect"><img src="https://david-dm.org/KennethanCeyer/browser-detect/status.svg" alt="dependencies Status"></a>
-    <a href="https://david-dm.org/KennethanCeyer/browser-detect?type=dev"><img src="https://david-dm.org/KennethanCeyer/browser-detect/dev-status.svg" alt="devDependencies Status"></a>
 </p>
 
 ## :package: Installation
