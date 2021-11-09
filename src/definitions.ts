@@ -2,6 +2,7 @@ import { BrowserDefinition, OsDefinition, OsVersion } from './browser-detect.int
 
 export const browsers: BrowserDefinition[] = [
     ['firefox', /Firefox\/([0-9\.]+)(?:\s|$)/],
+    ['fxios', /FxiOS\/([0-9\.a-z]+)(?:\s|$)/],
     ['opera', /Opera\/([0-9\.]+)(?:\s|$)/],
     ['opera', /OPR\/([0-9\.]+)(:?\s|$)$/],
     ['edge', /Edge\/([0-9\._]+)/],

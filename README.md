@@ -213,7 +213,7 @@ $ node ./examples/server.js
 - [x] IE 7+
 - [x] Chrome (Windows, MacOS)
 - [x] Edge
-- [x] Firefox
+- [x] Firefox (Windows, MacOS)
 - [x] Safari (Windows, MacOS)
 - [x] Opera
 - [x] Android
