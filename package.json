@@ -81,13 +81,13 @@
     "rollup-plugin-sourcemaps": "^0.4.2",
     "rollup-plugin-typescript2": "^0.16.1",
     "source-map-support": "^0.5.6",
-    "ts-loader": "^4.4.2",
+    "ts-loader": "^9.4.2",
     "ts-node": "^7.0.0",
     "tslint": "^5.11.0",
     "tslint-config-airbnb": "^5.9.2",
     "typedoc": "^0.11.1",
     "typescript": "^2.9.2",
-    "webpack": "^4.16.3"
+    "webpack": "^5.75.0"
   },
   "dependencies": {
     "core-js": "^2.5.7"
