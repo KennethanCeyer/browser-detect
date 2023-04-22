@@ -11,7 +11,6 @@
 </p>
 
 <p align="center">
-    <a href="https://travis-ci.org/KennethanCeyer/browser-detect"><img src="https://travis-ci.org/KennethanCeyer/browser-detect.svg?branch=master" alt="Build Status"></a>
     <a href="https://coveralls.io/github/KennethanCeyer/browser-detect?branch=master"><img src="https://coveralls.io/repos/github/KennethanCeyer/browser-detect/badge.svg?branch=master" alt="Coverage Status"></a>
     <a href="https://codecov.io/gh/KennethanCeyer/browser-detect"><img src="https://codecov.io/gh/KennethanCeyer/browser-detect/branch/master/graph/badge.svg" alt="codecov"></a>
 </p>
